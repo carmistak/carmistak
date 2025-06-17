@@ -2,157 +2,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Coupon Storefront with Savings</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background: #f5f5f5;
-    }
-    h1 {
-      text-align: center;
-    }
-    form {
-      max-width: 900px;
-      margin: 0 auto;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .product {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 20px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 15px;
-    }
-    .product img {
-      width: 120px;
-      height: auto;
-      border-radius: 6px;
-      margin-right: 20px;
-    }
-    .product-info {
-      flex: 1;
-    }
-    .product-details {
-      font-size: 13px;
-      margin-top: 6px;
-      color: #555;
-    }
-    .product input[type="number"] {
-      width: 60px;
-      padding: 6px;
-      font-size: 14px;
-    }
-    label, input {
-      font-size: 14px;
-    }
-    button {
-      display: block;
-      width: 100%;
-      background-color: #0070ba;
-      color: white;
-      padding: 12px;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #005fa3;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Coupon Storefront</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .storefront {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 15px;
+            width: 250px;
+            box-sizing: border-box;
+        }
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .product-info h3 {
+            margin: 10px 0 5px 0;
+            font-size: 1.1em;
+        }
+        .savings, .expiration {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #444;
+        }
+        .quantity-wrapper {
+            margin-top: 10px;
+        }
+        input[type="number"] {
+            width: 60px;
+        }
+        form {
+            margin-top: 30px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #0070ba;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #005a94;
+        }
+    </style>
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
 </head>
-<body oncontextmenu="return false;">
-  <h1>Coupon Storefront</h1>
+<body>
+    <h1>Coupon Storefront</h1>
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+        <input type="hidden" name="cmd" value="_cart">
+        <input type="hidden" name="upload" value="1">
+        <input type="hidden" name="business" value="carmenistak@gmail.com">
 
-  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-    <input type="hidden" name="business" value="carmenistak@gmail.com">
-    <input type="hidden" name="cmd" value="_cart">
-    <input type="hidden" name="upload" value="1">
-    <input type="hidden" name="currency_code" value="USD">
+        <div class="storefront">
+            <div class="product-card">
+                <img src="images/2000flushes.jpg" alt="2000 FLUSHES product">
+                <div class="product-info">
+                    <h3>2000 FLUSHES product</h3>
+                    <p class="savings">Save up to $6.00 OFF any ONE (1) 2000 FLUSHES product.</p>
+                    <p class="expiration">Expires 05-31-26</p>
+                    <div class="quantity-wrapper">
+                        <label for="qty-c477">Qty:</label>
+                        <input type="number" id="qty-c477" name="quantity_1" min="0" value="0">
+                    </div>
+                    <input type="hidden" name="item_name_1" value="2000 FLUSHES product">
+                    <input type="hidden" name="item_number_1" value="C477">
+                    <input type="hidden" name="amount_1" value="2.00">
+                </div>
+            </div>
 
-    <div class="product">
-      <img src="images/organic_girl.jpg" alt="Organic Girl">
-      <div class="product-info">
-        <strong>Organic Girl</strong>
-        <div class="product-details">
-          Save up to $7.00 OFF any ONE (1) organicgirl product.<br>
-          Exp: 05-31-26<br>
-          SKU: C480 — $2.00 each
+            <div class="product-card">
+                <img src="images/armorall.jpg" alt="Armor All product">
+                <div class="product-info">
+                    <h3>Armor All product</h3>
+                    <p class="savings">Save up to $8.00 OFF any ONE (1) Armor All product.</p>
+                    <p class="expiration">Expires 05-31-26</p>
+                    <div class="quantity-wrapper">
+                        <label for="qty-c476">Qty:</label>
+                        <input type="number" id="qty-c476" name="quantity_2" min="0" value="0">
+                    </div>
+                    <input type="hidden" name="item_name_2" value="Armor All product">
+                    <input type="hidden" name="item_number_2" value="C476">
+                    <input type="hidden" name="amount_2" value="2.00">
+                </div>
+            </div>
         </div>
-      </div>
-      <label>Qty:
-        <input type="number" name="quantity_1" min="0" value="0">
-        <input type="hidden" name="item_name_1" value="Organic Girl">
-        <input type="hidden" name="amount_1" value="2.00">
-      </label>
-    </div>
 
-    <div class="product">
-      <img src="images/nestle_nesquick.jpg" alt="Nestle Nesquick">
-      <div class="product-info">
-        <strong>Nestle Nesquick</strong>
-        <div class="product-details">
-          Save up to $6.00 OFF any ONE (1) Nestle Nesquick product.<br>
-          Exp: 05-31-26<br>
-          SKU: C479 — $2.00 each
-        </div>
-      </div>
-      <label>Qty:
-        <input type="number" name="quantity_2" min="0" value="0">
-        <input type="hidden" name="item_name_2" value="Nestle Nesquick">
-        <input type="hidden" name="amount_2" value="2.00">
-      </label>
-    </div>
-
-    <div class="product">
-      <img src="images/glad_trash_bags.jpg" alt="Glad Trash Bags">
-      <div class="product-info">
-        <strong>Glad Trash Bags</strong>
-        <div class="product-details">
-          Save up to $6.00 OFF any ONE (1) Glad Trash Bags product.<br>
-          Exp: 05-31-26<br>
-          SKU: C478 — $2.00 each
-        </div>
-      </div>
-      <label>Qty:
-        <input type="number" name="quantity_3" min="0" value="0">
-        <input type="hidden" name="item_name_3" value="Glad Trash Bags">
-        <input type="hidden" name="amount_3" value="2.00">
-      </label>
-    </div>
-
-    <div class="product-card">
-  <img src="images/2000flushes.jpg" alt="2000 FLUSHES product">
-  <h3>2000 FLUSHES product</h3>
-  <p><strong>Save up to $6.00 OFF any ONE (1)</strong> 2000 FLUSHES product.</p>
-  <p>Expires 05-31-26</p>
-  <label for="qty-c477">Qty:</label>
-  <input type="number" id="qty-c477" name="qty-c477" min="0" value="0">
-  <input type="hidden" name="item_name_c477" value="2000 FLUSHES product">
-  <input type="hidden" name="item_number_c477" value="C477">
-  <input type="hidden" name="amount_c477" value="2.00">
-</div>
-
-<div class="product-card">
-  <img src="images/armorall.jpg" alt="Armor All product">
-  <h3>Armor All product</h3>
-  <p><strong>Save up to $8.00 OFF any ONE (1)</strong> Armor All product.</p>
-  <p>Expires 05-31-26</p>
-  <label for="qty-c476">Qty:</label>
-  <input type="number" id="qty-c476" name="qty-c476" min="0" value="0">
-  <input type="hidden" name="item_name_c476" value="Armor All product">
-  <input type="hidden" name="item_number_c476" value="C476">
-  <input type="hidden" name="amount_c476" value="2.00">
-</div>
-
-    <button type="submit">Proceed to PayPal</button>
-  </form>
+        <button type="submit">Proceed to PayPal</button>
+    </form>
 </body>
 </html>
