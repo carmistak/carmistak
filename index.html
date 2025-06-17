@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Coupon Storefront with Quantity Selection</title>
+  <title>Coupon Storefront with Savings</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -25,6 +25,7 @@
     .product {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       margin-bottom: 20px;
       border-bottom: 1px solid #eee;
       padding-bottom: 15px;
@@ -38,12 +39,17 @@
     .product-info {
       flex: 1;
     }
-    label, input {
-      font-size: 14px;
+    .product-details {
+      font-size: 13px;
+      margin-top: 6px;
+      color: #555;
     }
     .product input[type="number"] {
       width: 60px;
       padding: 6px;
+      font-size: 14px;
+    }
+    label, input {
       font-size: 14px;
     }
     button {
@@ -74,40 +80,52 @@
     <div class="product">
       <img src="images/organic_girl.jpg" alt="Organic Girl">
       <div class="product-info">
-        <strong>Organic Girl</strong><br>
-        SKU: C480 — $2.00 each<br>
-        <label>Quantity:
-          <input type="number" name="quantity_1" min="0" value="0">
-        </label>
+        <strong>Organic Girl</strong>
+        <div class="product-details">
+          Save up to $7.00 OFF any ONE (1) organicgirl product.<br>
+          Exp: 05-31-26<br>
+          SKU: C480 — $2.00 each
+        </div>
+      </div>
+      <label>Qty:
+        <input type="number" name="quantity_1" min="0" value="0">
         <input type="hidden" name="item_name_1" value="Organic Girl">
         <input type="hidden" name="amount_1" value="2.00">
-      </div>
+      </label>
     </div>
 
     <div class="product">
       <img src="images/nestle_nesquick.jpg" alt="Nestle Nesquick">
       <div class="product-info">
-        <strong>Nestle Nesquick</strong><br>
-        SKU: C479 — $2.00 each<br>
-        <label>Quantity:
-          <input type="number" name="quantity_2" min="0" value="0">
-        </label>
+        <strong>Nestle Nesquick</strong>
+        <div class="product-details">
+          Save up to $6.00 OFF any ONE (1) Nestle Nesquick product.<br>
+          Exp: 05-31-26<br>
+          SKU: C479 — $2.00 each
+        </div>
+      </div>
+      <label>Qty:
+        <input type="number" name="quantity_2" min="0" value="0">
         <input type="hidden" name="item_name_2" value="Nestle Nesquick">
         <input type="hidden" name="amount_2" value="2.00">
-      </div>
+      </label>
     </div>
 
     <div class="product">
       <img src="images/glad_trash_bags.jpg" alt="Glad Trash Bags">
       <div class="product-info">
-        <strong>Glad Trash Bags</strong><br>
-        SKU: C478 — $2.00 each<br>
-        <label>Quantity:
-          <input type="number" name="quantity_3" min="0" value="0">
-        </label>
+        <strong>Glad Trash Bags</strong>
+        <div class="product-details">
+          Save up to $6.00 OFF any ONE (1) Glad Trash Bags product.<br>
+          Exp: 05-31-26<br>
+          SKU: C478 — $2.00 each
+        </div>
+      </div>
+      <label>Qty:
+        <input type="number" name="quantity_3" min="0" value="0">
         <input type="hidden" name="item_name_3" value="Glad Trash Bags">
         <input type="hidden" name="amount_3" value="2.00">
-      </div>
+      </label>
     </div>
 
     <button type="submit">Proceed to PayPal</button>
