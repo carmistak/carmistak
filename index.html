@@ -2,786 +2,824 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Coupon Storefront</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #ffffff; padding: 20px; }
-        table { width: 100%; border-spacing: 20px; }
-        td { vertical-align: top; width: 20%; }
-        img { width: 100%; max-width: 200px; display: block; margin-bottom: 5px; }
-        .caption { font-size: 14px; }
-        .quantity { margin-top: 5px; }
-    </style>
-    <script>
-        document.addEventListener('contextmenu', event => event.preventDefault());
-    </script>
+<meta charset="UTF-8" />
+<title>Coupon Storefront</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #fff; padding: 20px; max-width: 600px; margin: auto; }
+  .product {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+  }
+  img {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .caption {
+    font-size: 14px;
+  }
+  .quantity {
+    margin-top: 10px;
+  }
+</style>
+<script>
+  document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
 </head>
 <body>
-    <h2>Coupon Storefront</h2>
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-        <input type="hidden" name="cmd" value="_cart">
-        <input type="hidden" name="upload" value="1">
-        <input type="hidden" name="business" value="carmenistak@gmail.com">
-        <table>
-<tr>
+<h2>Coupon Storefront</h2>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_cart" />
+<input type="hidden" name="upload" value="1" />
+<input type="hidden" name="business" value="carmenistak@gmail.com" />
 
-        <td>
-            <img src="images/celestialseasonings.jpg" alt="Celestial Seasonings">
-            <div class="caption">
-                <strong>Celestial Seasonings</strong><br>
-                Save up to $1.00 OFF any ONE (1) Celestial Seasonings product.<br>
-                Expires 05/31/26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_1" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_1" value="Celestial Seasonings">
-                    <input type="hidden" name="item_number_1" value="C001">
-                    <input type="hidden" name="amount_1" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/celestialseasonings.jpg" alt="Celestial Seasonings" />
+      <div class="caption">
+        <strong>Celestial Seasonings</strong><br />
+        SKU: C001<br />
+        Save up to $1.00 OFF any ONE (1) Celestial Seasonings product.<br />
+        Expires 05/31/26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_1" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_1" value="Celestial Seasonings" />
+          <input type="hidden" name="item_number_1" value="C001" />
+          <input type="hidden" name="amount_1" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/domino.jpg" alt="Domino">
-            <div class="caption">
-                <strong>Domino</strong><br>
-                Save up to $1.00 OFF any ONE (1) Domino product.<br>
-                Expires 05/31/26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_2" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_2" value="Domino">
-                    <input type="hidden" name="item_number_2" value="C002">
-                    <input type="hidden" name="amount_2" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/domino.jpg" alt="Domino" />
+      <div class="caption">
+        <strong>Domino</strong><br />
+        SKU: C002<br />
+        Save up to $1.00 OFF any ONE (1) Domino product.<br />
+        Expires 05/31/26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_2" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_2" value="Domino" />
+          <input type="hidden" name="item_number_2" value="C002" />
+          <input type="hidden" name="amount_2" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/velveeta.jpg" alt="Velveeta">
-            <div class="caption">
-                <strong>Velveeta</strong><br>
-                Save up to $1.00 OFF any ONE (1) Velveeta product.<br>
-                Expires 05/31/26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_3" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_3" value="Velveeta">
-                    <input type="hidden" name="item_number_3" value="C003">
-                    <input type="hidden" name="amount_3" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/velveeta.jpg" alt="Velveeta" />
+      <div class="caption">
+        <strong>Velveeta</strong><br />
+        SKU: C003<br />
+        Save up to $1.00 OFF any ONE (1) Velveeta product.<br />
+        Expires 05/31/26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_3" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_3" value="Velveeta" />
+          <input type="hidden" name="item_number_3" value="C003" />
+          <input type="hidden" name="amount_3" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/burt'sbees.jpg" alt="Burt's Bees">
-            <div class="caption">
-                <strong>Burt's Bees</strong><br>
-                Save up to $1.00 OFF any ONE (1) Burt's Bees product.<br>
-                Expires 05/31/26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_4" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_4" value="Burt's Bees">
-                    <input type="hidden" name="item_number_4" value="C004">
-                    <input type="hidden" name="amount_4" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/burt'sbees.jpg" alt="Burt's Bees" />
+      <div class="caption">
+        <strong>Burt's Bees</strong><br />
+        SKU: C004<br />
+        Save up to $1.00 OFF any ONE (1) Burt's Bees product.<br />
+        Expires 05/31/26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_4" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_4" value="Burt's Bees" />
+          <input type="hidden" name="item_number_4" value="C004" />
+          <input type="hidden" name="amount_4" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/colgate.jpg" alt="Colgate">
-            <div class="caption">
-                <strong>Colgate</strong><br>
-                Save up to $1.00 OFF any ONE (1) Colgate product.<br>
-                Expires 05/31/26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_5" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_5" value="Colgate">
-                    <input type="hidden" name="item_number_5" value="C005">
-                    <input type="hidden" name="amount_5" value="2.00">
-                </div>
-            </div>
-        </td>
-    </tr>
-<tr>
-
-        <td>
-            <img src="images/organicvalley.jpg" alt="Organic Valley">
-            <div class="caption">
-                <strong>Organic Valley</strong><br>
-                Save up to $1.00 OFF any ONE (1) Organic Valley product.<br>
-                Expires 05/31/26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_6" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_6" value="Organic Valley">
-                    <input type="hidden" name="item_number_6" value="C006">
-                    <input type="hidden" name="amount_6" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/colgate.jpg" alt="Colgate" />
+      <div class="caption">
+        <strong>Colgate</strong><br />
+        SKU: C005<br />
+        Save up to $1.00 OFF any ONE (1) Colgate product.<br />
+        Expires 05/31/26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_5" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_5" value="Colgate" />
+          <input type="hidden" name="item_number_5" value="C005" />
+          <input type="hidden" name="amount_5" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/pledge.jpg" alt="Pledge">
-            <div class="caption">
-                <strong>Pledge</strong><br>
-                Save up to $1.00 OFF any ONE (1) Pledge product.<br>
-                Expires 05/31/26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_7" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_7" value="Pledge">
-                    <input type="hidden" name="item_number_7" value="C007">
-                    <input type="hidden" name="amount_7" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/organicvalley.jpg" alt="Organic Valley" />
+      <div class="caption">
+        <strong>Organic Valley</strong><br />
+        SKU: C006<br />
+        Save up to $1.00 OFF any ONE (1) Organic Valley product.<br />
+        Expires 05/31/26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_6" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_6" value="Organic Valley" />
+          <input type="hidden" name="item_number_6" value="C006" />
+          <input type="hidden" name="amount_6" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/amy’s.jpg" alt="Amy’s">
-            <div class="caption">
-                <strong>Amy’s</strong><br>
-                Save up to $1.00 OFF any ONE (1) Amy’s product.<br>
-                Expires 05/31/26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_8" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_8" value="Amy’s">
-                    <input type="hidden" name="item_number_8" value="C008">
-                    <input type="hidden" name="amount_8" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/pledge.jpg" alt="Pledge" />
+      <div class="caption">
+        <strong>Pledge</strong><br />
+        SKU: C007<br />
+        Save up to $1.00 OFF any ONE (1) Pledge product.<br />
+        Expires 05/31/26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_7" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_7" value="Pledge" />
+          <input type="hidden" name="item_number_7" value="C007" />
+          <input type="hidden" name="amount_7" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/bubbaburger.jpg" alt="BUBBA Burger">
-            <div class="caption">
-                <strong>BUBBA Burger</strong><br>
-                Save up to $1.00 OFF any ONE (1) BUBBA Burger product.<br>
-                Expires 05/31/26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_9" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_9" value="BUBBA Burger">
-                    <input type="hidden" name="item_number_9" value="C009">
-                    <input type="hidden" name="amount_9" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/amy’s.jpg" alt="Amy’s" />
+      <div class="caption">
+        <strong>Amy’s</strong><br />
+        SKU: C008<br />
+        Save up to $1.00 OFF any ONE (1) Amy’s product.<br />
+        Expires 05/31/26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_8" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_8" value="Amy’s" />
+          <input type="hidden" name="item_number_8" value="C008" />
+          <input type="hidden" name="amount_8" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/tampax.jpg" alt="Tampax">
-            <div class="caption">
-                <strong>Tampax</strong><br>
-                Save up to $1.00 OFF any ONE (1) Tampax product.<br>
-                Expires 05/31/26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_10" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_10" value="Tampax">
-                    <input type="hidden" name="item_number_10" value="C010">
-                    <input type="hidden" name="amount_10" value="2.00">
-                </div>
-            </div>
-        </td>
-    </tr>
-<tr>
-
-        <td>
-            <img src="images/organicvalley.jpg" alt="Organic Valley">
-            <div class="caption">
-                <strong>Organic Valley</strong><br>
-                Save up to $8.00 OFF any ONE (1)<br>
-                Expires 05-31-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_11" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_11" value="Organic Valley">
-                    <input type="hidden" name="item_number_11" value="C011">
-                    <input type="hidden" name="amount_11" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/bubbaburger.jpg" alt="BUBBA Burger" />
+      <div class="caption">
+        <strong>BUBBA Burger</strong><br />
+        SKU: C009<br />
+        Save up to $1.00 OFF any ONE (1) BUBBA Burger product.<br />
+        Expires 05/31/26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_9" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_9" value="BUBBA Burger" />
+          <input type="hidden" name="item_number_9" value="C009" />
+          <input type="hidden" name="amount_9" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/pledge.jpg" alt="pledge">
-            <div class="caption">
-                <strong>pledge</strong><br>
-                Save up to $6.00 OFF any ONE (1)<br>
-                Expires 05-31-26 s 05-31-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_12" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_12" value="pledge">
-                    <input type="hidden" name="item_number_12" value="C012">
-                    <input type="hidden" name="amount_12" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/tampax.jpg" alt="Tampax" />
+      <div class="caption">
+        <strong>Tampax</strong><br />
+        SKU: C010<br />
+        Save up to $1.00 OFF any ONE (1) Tampax product.<br />
+        Expires 05/31/26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_10" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_10" value="Tampax" />
+          <input type="hidden" name="item_number_10" value="C010" />
+          <input type="hidden" name="amount_10" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/amy's.jpg" alt="Amy's">
-            <div class="caption">
-                <strong>Amy's</strong><br>
-                Save up to $9.00 OFF any ONE (1)<br>
-                Expires 05-31-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_13" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_13" value="Amy's">
-                    <input type="hidden" name="item_number_13" value="C013">
-                    <input type="hidden" name="amount_13" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/organicvalley.jpg" alt="Organic Valley" />
+      <div class="caption">
+        <strong>Organic Valley</strong><br />
+        SKU: C011<br />
+        Save up to $8.00 OFF any ONE (1)<br />
+        Expires 05-31-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_11" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_11" value="Organic Valley" />
+          <input type="hidden" name="item_number_11" value="C011" />
+          <input type="hidden" name="amount_11" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/bubbaburger.jpg" alt="BUBBA burger">
-            <div class="caption">
-                <strong>BUBBA burger</strong><br>
-                Save up to $7.00 OFF any ONE (1) save up to $9.00 OFF any ONE (1)<br>
-                Expires 05-31-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_14" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_14" value="BUBBA burger">
-                    <input type="hidden" name="item_number_14" value="C014">
-                    <input type="hidden" name="amount_14" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/pledge.jpg" alt="pledge" />
+      <div class="caption">
+        <strong>pledge</strong><br />
+        SKU: C012<br />
+        Save up to $6.00 OFF any ONE (1)<br />
+        Expires 05-31-26 s 05-31-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_12" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_12" value="pledge" />
+          <input type="hidden" name="item_number_12" value="C012" />
+          <input type="hidden" name="amount_12" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/gatorade.jpg" alt="GATORADE">
-            <div class="caption">
-                <strong>GATORADE</strong><br>
-                Save up to $6.00 OFF any ONE (1)<br>
-                Expires xpires 05-31-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_15" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_15" value="GATORADE">
-                    <input type="hidden" name="item_number_15" value="C015">
-                    <input type="hidden" name="amount_15" value="2.00">
-                </div>
-            </div>
-        </td>
-    </tr>
-<tr>
-
-        <td>
-            <img src="images/dreft.jpg" alt="dreft">
-            <div class="caption">
-                <strong>dreft</strong><br>
-                Save up to ‘<br>
-                Expires 05-31-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_16" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_16" value="dreft">
-                    <input type="hidden" name="item_number_16" value="C016">
-                    <input type="hidden" name="amount_16" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/amy's.jpg" alt="Amy's" />
+      <div class="caption">
+        <strong>Amy's</strong><br />
+        SKU: C013<br />
+        Save up to $9.00 OFF any ONE (1)<br />
+        Expires 05-31-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_13" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_13" value="Amy's" />
+          <input type="hidden" name="item_number_13" value="C013" />
+          <input type="hidden" name="amount_13" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/pantenepro-v.jpg" alt="PANTENE PRO-V">
-            <div class="caption">
-                <strong>PANTENE PRO-V</strong><br>
-                Save up to $6.00 OFF any ONE (1)<br>
-                Expires 05-31-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_17" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_17" value="PANTENE PRO-V">
-                    <input type="hidden" name="item_number_17" value="C017">
-                    <input type="hidden" name="amount_17" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/bubbaburger.jpg" alt="BUBBA burger" />
+      <div class="caption">
+        <strong>BUBBA burger</strong><br />
+        SKU: C014<br />
+        Save up to $7.00 OFF any ONE (1) save up to $9.00 OFF any ONE (1)<br />
+        Expires 05-31-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_14" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_14" value="BUBBA burger" />
+          <input type="hidden" name="item_number_14" value="C014" />
+          <input type="hidden" name="amount_14" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/ben&jerry's.jpg" alt="BEN & JERRY'S">
-            <div class="caption">
-                <strong>BEN & JERRY'S</strong><br>
-                Save up to $7.00 OFF any ONE (1) ‘<br>
-                Expires 05-31-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_18" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_18" value="BEN & JERRY'S">
-                    <input type="hidden" name="item_number_18" value="C018">
-                    <input type="hidden" name="amount_18" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/gatorade.jpg" alt="GATORADE" />
+      <div class="caption">
+        <strong>GATORADE</strong><br />
+        SKU: C015<br />
+        Save up to $6.00 OFF any ONE (1)<br />
+        Expires xpires 05-31-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_15" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_15" value="GATORADE" />
+          <input type="hidden" name="item_number_15" value="C015" />
+          <input type="hidden" name="amount_15" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/delmonte.jpg" alt="DEL MONTE">
-            <div class="caption">
-                <strong>DEL MONTE</strong><br>
-                Save up to $9.00 OFF any ONE (1)<br>
-                Expires 05-31-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_19" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_19" value="DEL MONTE">
-                    <input type="hidden" name="item_number_19" value="C019">
-                    <input type="hidden" name="amount_19" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/dreft.jpg" alt="dreft" />
+      <div class="caption">
+        <strong>dreft</strong><br />
+        SKU: C016<br />
+        Save up to ‘<br />
+        Expires 05-31-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_16" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_16" value="dreft" />
+          <input type="hidden" name="item_number_16" value="C016" />
+          <input type="hidden" name="amount_16" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/heinz.jpg" alt="HEINZ">
-            <div class="caption">
-                <strong>HEINZ</strong><br>
-                Save up to $8.00 OFF any ONE (1)<br>
-                Expires 05-31-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_20" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_20" value="HEINZ">
-                    <input type="hidden" name="item_number_20" value="C020">
-                    <input type="hidden" name="amount_20" value="2.00">
-                </div>
-            </div>
-        </td>
-    </tr>
-<tr>
-
-        <td>
-            <img src="images/hormelfoods.jpg" alt="Hormel Foods">
-            <div class="caption">
-                <strong>Hormel Foods</strong><br>
-                Save up to $6.00 OFF any ONE (1)<br>
-                Expires 05-31-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_21" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_21" value="Hormel Foods">
-                    <input type="hidden" name="item_number_21" value="C021">
-                    <input type="hidden" name="amount_21" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/pantenepro-v.jpg" alt="PANTENE PRO-V" />
+      <div class="caption">
+        <strong>PANTENE PRO-V</strong><br />
+        SKU: C017<br />
+        Save up to $6.00 OFF any ONE (1)<br />
+        Expires 05-31-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_17" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_17" value="PANTENE PRO-V" />
+          <input type="hidden" name="item_number_17" value="C017" />
+          <input type="hidden" name="amount_17" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/oberto.jpg" alt="OBERTO">
-            <div class="caption">
-                <strong>OBERTO</strong><br>
-                Save up to $9.00 OFF any ONE (1)<br>
-                Expires 05-31-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_22" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_22" value="OBERTO">
-                    <input type="hidden" name="item_number_22" value="C022">
-                    <input type="hidden" name="amount_22" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/ben&jerry's.jpg" alt="BEN & JERRY'S" />
+      <div class="caption">
+        <strong>BEN & JERRY'S</strong><br />
+        SKU: C018<br />
+        Save up to $7.00 OFF any ONE (1) ‘<br />
+        Expires 05-31-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_18" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_18" value="BEN & JERRY'S" />
+          <input type="hidden" name="item_number_18" value="C018" />
+          <input type="hidden" name="amount_18" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/tyson.jpg" alt="TYSON">
-            <div class="caption">
-                <strong>TYSON</strong><br>
-                Save up to $6.00 OFF any ONE (1) save up to $6.00 OFF any ONE (1)<br>
-                Expires 05-31-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_23" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_23" value="TYSON">
-                    <input type="hidden" name="item_number_23" value="C023">
-                    <input type="hidden" name="amount_23" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/delmonte.jpg" alt="DEL MONTE" />
+      <div class="caption">
+        <strong>DEL MONTE</strong><br />
+        SKU: C019<br />
+        Save up to $9.00 OFF any ONE (1)<br />
+        Expires 05-31-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_19" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_19" value="DEL MONTE" />
+          <input type="hidden" name="item_number_19" value="C019" />
+          <input type="hidden" name="amount_19" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/schickhydro.jpg" alt="Schick Hydro">
-            <div class="caption">
-                <strong>Schick Hydro</strong><br>
-                Save up to $6.00 OFF any ONE (1) fave up to $9.00 OFF any ONE (1) ve up to $7.00 OFF any ONE (1)<br>
-                Expires 05-31-26 xpires 05-31-26 pires 05-31-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_24" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_24" value="Schick Hydro">
-                    <input type="hidden" name="item_number_24" value="C024">
-                    <input type="hidden" name="amount_24" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/heinz.jpg" alt="HEINZ" />
+      <div class="caption">
+        <strong>HEINZ</strong><br />
+        SKU: C020<br />
+        Save up to $8.00 OFF any ONE (1)<br />
+        Expires 05-31-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_20" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_20" value="HEINZ" />
+          <input type="hidden" name="item_number_20" value="C020" />
+          <input type="hidden" name="amount_20" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/urly's.jpg" alt="URLY'S">
-            <div class="caption">
-                <strong>URLY'S</strong><br>
-                Save up to $6.00 OFF any ONE (1)<br>
-                Expires 05-31-26 !<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_25" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_25" value="URLY'S">
-                    <input type="hidden" name="item_number_25" value="C025">
-                    <input type="hidden" name="amount_25" value="2.00">
-                </div>
-            </div>
-        </td>
-    </tr>
-<tr>
-
-        <td>
-            <img src="images/reidapotato.jpg" alt="re Ida Potato">
-            <div class="caption">
-                <strong>re Ida Potato</strong><br>
-                Save up to $9.00 OFF any ONE (1)<br>
-                Expires 05-31-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_26" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_26" value="re Ida Potato">
-                    <input type="hidden" name="item_number_26" value="C026">
-                    <input type="hidden" name="amount_26" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/hormelfoods.jpg" alt="Hormel Foods" />
+      <div class="caption">
+        <strong>Hormel Foods</strong><br />
+        SKU: C021<br />
+        Save up to $6.00 OFF any ONE (1)<br />
+        Expires 05-31-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_21" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_21" value="Hormel Foods" />
+          <input type="hidden" name="item_number_21" value="C021" />
+          <input type="hidden" name="amount_21" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/johnsonville.jpg" alt="Johnsonville">
-            <div class="caption">
-                <strong>Johnsonville</strong><br>
-                Save up to $6.00 OFF any ONE (1)<br>
-                Expires 04-30-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_27" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_27" value="Johnsonville">
-                    <input type="hidden" name="item_number_27" value="C027">
-                    <input type="hidden" name="amount_27" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/oberto.jpg" alt="OBERTO" />
+      <div class="caption">
+        <strong>OBERTO</strong><br />
+        SKU: C022<br />
+        Save up to $9.00 OFF any ONE (1)<br />
+        Expires 05-31-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_22" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_22" value="OBERTO" />
+          <input type="hidden" name="item_number_22" value="C022" />
+          <input type="hidden" name="amount_22" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/windex.jpg" alt="Windex">
-            <div class="caption">
-                <strong>Windex</strong><br>
-                Save up to ‘ave up to $6.00 OFF any ONE (1)<br>
-                Expires 04-30-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_28" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_28" value="Windex">
-                    <input type="hidden" name="item_number_28" value="C028">
-                    <input type="hidden" name="amount_28" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/tyson.jpg" alt="TYSON" />
+      <div class="caption">
+        <strong>TYSON</strong><br />
+        SKU: C023<br />
+        Save up to $6.00 OFF any ONE (1) save up to $6.00 OFF any ONE (1)<br />
+        Expires 05-31-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_23" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_23" value="TYSON" />
+          <input type="hidden" name="item_number_23" value="C023" />
+          <input type="hidden" name="amount_23" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/immaculatebaking.jpg" alt="Immaculate Baking">
-            <div class="caption">
-                <strong>Immaculate Baking</strong><br>
-                Save up to $8.00 OFF any ONE (1)<br>
-                Expires 04-30-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_29" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_29" value="Immaculate Baking">
-                    <input type="hidden" name="item_number_29" value="C029">
-                    <input type="hidden" name="amount_29" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/schickhydro.jpg" alt="Schick Hydro" />
+      <div class="caption">
+        <strong>Schick Hydro</strong><br />
+        SKU: C024<br />
+        Save up to $6.00 OFF any ONE (1) fave up to $9.00 OFF any ONE (1) ve up to $7.00 OFF any ONE (1)<br />
+        Expires 05-31-26 xpires 05-31-26 pires 05-31-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_24" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_24" value="Schick Hydro" />
+          <input type="hidden" name="item_number_24" value="C024" />
+          <input type="hidden" name="amount_24" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/kibblesnbits.jpg" alt="Kibbles n Bits">
-            <div class="caption">
-                <strong>Kibbles n Bits</strong><br>
-                Save up to $8.00 OFF any ONE (1)<br>
-                Expires 04-30-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_30" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_30" value="Kibbles n Bits">
-                    <input type="hidden" name="item_number_30" value="C030">
-                    <input type="hidden" name="amount_30" value="2.00">
-                </div>
-            </div>
-        </td>
-    </tr>
-<tr>
-
-        <td>
-            <img src="images/luziannetea.jpg" alt="Luzianne Tea">
-            <div class="caption">
-                <strong>Luzianne Tea</strong><br>
-                Save up to $7.00 OFF any ONE (1)<br>
-                Expires 04-30-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_31" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_31" value="Luzianne Tea">
-                    <input type="hidden" name="item_number_31" value="C031">
-                    <input type="hidden" name="amount_31" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/urly's.jpg" alt="URLY'S" />
+      <div class="caption">
+        <strong>URLY'S</strong><br />
+        SKU: C025<br />
+        Save up to $6.00 OFF any ONE (1)<br />
+        Expires 05-31-26 !<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_25" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_25" value="URLY'S" />
+          <input type="hidden" name="item_number_25" value="C025" />
+          <input type="hidden" name="amount_25" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/ragusauce.jpg" alt="RAGU Sauce">
-            <div class="caption">
-                <strong>RAGU Sauce</strong><br>
-                Save up to $7.00 OFF any ONE (1) ‘ave up to $6.00 OFF any ONE (1)<br>
-                Expires 04-30-26 xpires 04-30-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_32" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_32" value="RAGU Sauce">
-                    <input type="hidden" name="item_number_32" value="C032">
-                    <input type="hidden" name="amount_32" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/reidapotato.jpg" alt="re Ida Potato" />
+      <div class="caption">
+        <strong>re Ida Potato</strong><br />
+        SKU: C026<br />
+        Save up to $9.00 OFF any ONE (1)<br />
+        Expires 05-31-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_26" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_26" value="re Ida Potato" />
+          <input type="hidden" name="item_number_26" value="C026" />
+          <input type="hidden" name="amount_26" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/scott.jpg" alt="Scott">
-            <div class="caption">
-                <strong>Scott</strong><br>
-                Save up to $9.00 OFF any ONE (1)<br>
-                Expires 04-30-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_33" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_33" value="Scott">
-                    <input type="hidden" name="item_number_33" value="C033">
-                    <input type="hidden" name="amount_33" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/johnsonville.jpg" alt="Johnsonville" />
+      <div class="caption">
+        <strong>Johnsonville</strong><br />
+        SKU: C027<br />
+        Save up to $6.00 OFF any ONE (1)<br />
+        Expires 04-30-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_27" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_27" value="Johnsonville" />
+          <input type="hidden" name="item_number_27" value="C027" />
+          <input type="hidden" name="amount_27" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/vandekamp's.jpg" alt="Van de Kamp's">
-            <div class="caption">
-                <strong>Van de Kamp's</strong><br>
-                Save up to $8.00 OFF any ONE (1)<br>
-                Expires 04-30-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_34" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_34" value="Van de Kamp's">
-                    <input type="hidden" name="item_number_34" value="C034">
-                    <input type="hidden" name="amount_34" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/windex.jpg" alt="Windex" />
+      <div class="caption">
+        <strong>Windex</strong><br />
+        SKU: C028<br />
+        Save up to ‘ave up to $6.00 OFF any ONE (1)<br />
+        Expires 04-30-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_28" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_28" value="Windex" />
+          <input type="hidden" name="item_number_28" value="C028" />
+          <input type="hidden" name="amount_28" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/zephyrhills.jpg" alt="ZEPHYRHILLS">
-            <div class="caption">
-                <strong>ZEPHYRHILLS</strong><br>
-                Save up to $8.00 OFF any ONE (1)<br>
-                Expires 04-30-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_35" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_35" value="ZEPHYRHILLS">
-                    <input type="hidden" name="item_number_35" value="C035">
-                    <input type="hidden" name="amount_35" value="2.00">
-                </div>
-            </div>
-        </td>
-    </tr>
-<tr>
-
-        <td>
-            <img src="images/saraleedessert.jpg" alt="Sara Lee Dessert">
-            <div class="caption">
-                <strong>Sara Lee Dessert</strong><br>
-                Save up to jave up to $7.00 OFF any ONE (1)<br>
-                Expires 04-30-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_36" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_36" value="Sara Lee Dessert">
-                    <input type="hidden" name="item_number_36" value="C036">
-                    <input type="hidden" name="amount_36" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/immaculatebaking.jpg" alt="Immaculate Baking" />
+      <div class="caption">
+        <strong>Immaculate Baking</strong><br />
+        SKU: C029<br />
+        Save up to $8.00 OFF any ONE (1)<br />
+        Expires 04-30-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_29" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_29" value="Immaculate Baking" />
+          <input type="hidden" name="item_number_29" value="C029" />
+          <input type="hidden" name="amount_29" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/ocacola.jpg" alt="oca Cola">
-            <div class="caption">
-                <strong>oca Cola</strong><br>
-                Save up to ‘<br>
-                Expires 12-31-25 it<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_37" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_37" value="oca Cola">
-                    <input type="hidden" name="item_number_37" value="C037">
-                    <input type="hidden" name="amount_37" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/kibblesnbits.jpg" alt="Kibbles n Bits" />
+      <div class="caption">
+        <strong>Kibbles n Bits</strong><br />
+        SKU: C030<br />
+        Save up to $8.00 OFF any ONE (1)<br />
+        Expires 04-30-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_30" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_30" value="Kibbles n Bits" />
+          <input type="hidden" name="item_number_30" value="C030" />
+          <input type="hidden" name="amount_30" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/silk.jpg" alt="Silk">
-            <div class="caption">
-                <strong>Silk</strong><br>
-                Save up to $7.00 OFF any ONE (1)<br>
-                Expires 04-30-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_38" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_38" value="Silk">
-                    <input type="hidden" name="item_number_38" value="C038">
-                    <input type="hidden" name="amount_38" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/luziannetea.jpg" alt="Luzianne Tea" />
+      <div class="caption">
+        <strong>Luzianne Tea</strong><br />
+        SKU: C031<br />
+        Save up to $7.00 OFF any ONE (1)<br />
+        Expires 04-30-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_31" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_31" value="Luzianne Tea" />
+          <input type="hidden" name="item_number_31" value="C031" />
+          <input type="hidden" name="amount_31" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/clorox.jpg" alt="CLOROX">
-            <div class="caption">
-                <strong>CLOROX</strong><br>
-                Save up to $7.00 OFF any ONE (1) ‘<br>
-                Expires 04-30-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_39" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_39" value="CLOROX">
-                    <input type="hidden" name="item_number_39" value="C039">
-                    <input type="hidden" name="amount_39" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/ragusauce.jpg" alt="RAGU Sauce" />
+      <div class="caption">
+        <strong>RAGU Sauce</strong><br />
+        SKU: C032<br />
+        Save up to $7.00 OFF any ONE (1) ‘ave up to $6.00 OFF any ONE (1)<br />
+        Expires 04-30-26 xpires 04-30-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_32" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_32" value="RAGU Sauce" />
+          <input type="hidden" name="item_number_32" value="C032" />
+          <input type="hidden" name="amount_32" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/jimmydean.jpg" alt="jimmy Dean">
-            <div class="caption">
-                <strong>jimmy Dean</strong><br>
-                Save up to $7.00 OFF any ONE (1)<br>
-                Expires 04-30-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_40" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_40" value="jimmy Dean">
-                    <input type="hidden" name="item_number_40" value="C040">
-                    <input type="hidden" name="amount_40" value="2.00">
-                </div>
-            </div>
-        </td>
-    </tr>
-<tr>
-
-        <td>
-            <img src="images/naturesweet.jpg" alt="NATURESWEET">
-            <div class="caption">
-                <strong>NATURESWEET</strong><br>
-                Save up to $7.00 OFF any ONE (1) ‘<br>
-                Expires ‘oupon cannot be doubled coupon cannot be doubled coupon cannot be doubled<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_41" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_41" value="NATURESWEET">
-                    <input type="hidden" name="item_number_41" value="C041">
-                    <input type="hidden" name="amount_41" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/scott.jpg" alt="Scott" />
+      <div class="caption">
+        <strong>Scott</strong><br />
+        SKU: C033<br />
+        Save up to $9.00 OFF any ONE (1)<br />
+        Expires 04-30-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_33" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_33" value="Scott" />
+          <input type="hidden" name="item_number_33" value="C033" />
+          <input type="hidden" name="amount_33" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/oceanspray.jpg" alt="Ocean Spray">
-            <div class="caption">
-                <strong>Ocean Spray</strong><br>
-                Save up to $8.00 OFF any ONE (1)<br>
-                Expires 03-31-26 coupon cannot be doubled<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_42" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_42" value="Ocean Spray">
-                    <input type="hidden" name="item_number_42" value="C042">
-                    <input type="hidden" name="amount_42" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/vandekamp's.jpg" alt="Van de Kamp's" />
+      <div class="caption">
+        <strong>Van de Kamp's</strong><br />
+        SKU: C034<br />
+        Save up to $8.00 OFF any ONE (1)<br />
+        Expires 04-30-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_34" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_34" value="Van de Kamp's" />
+          <input type="hidden" name="item_number_34" value="C034" />
+          <input type="hidden" name="amount_34" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/estlebrand.jpg" alt="ESTLE BRAND">
-            <div class="caption">
-                <strong>ESTLE BRAND</strong><br>
-                Save up to $7.00 OFF any ONE (1)<br>
-                Expires 04-30-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_43" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_43" value="ESTLE BRAND">
-                    <input type="hidden" name="item_number_43" value="C043">
-                    <input type="hidden" name="amount_43" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/zephyrhills.jpg" alt="ZEPHYRHILLS" />
+      <div class="caption">
+        <strong>ZEPHYRHILLS</strong><br />
+        SKU: C035<br />
+        Save up to $8.00 OFF any ONE (1)<br />
+        Expires 04-30-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_35" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_35" value="ZEPHYRHILLS" />
+          <input type="hidden" name="item_number_35" value="C035" />
+          <input type="hidden" name="amount_35" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/simplybeverages.jpg" alt="Simply Beverages">
-            <div class="caption">
-                <strong>Simply Beverages</strong><br>
-                Save up to $6.00 OFF any ONE (1)<br>
-                Expires 03-31-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_44" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_44" value="Simply Beverages">
-                    <input type="hidden" name="item_number_44" value="C044">
-                    <input type="hidden" name="amount_44" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/saraleedessert.jpg" alt="Sara Lee Dessert" />
+      <div class="caption">
+        <strong>Sara Lee Dessert</strong><br />
+        SKU: C036<br />
+        Save up to jave up to $7.00 OFF any ONE (1)<br />
+        Expires 04-30-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_36" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_36" value="Sara Lee Dessert" />
+          <input type="hidden" name="item_number_36" value="C036" />
+          <input type="hidden" name="amount_36" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/speedstick.jpg" alt="Speed Stick">
-            <div class="caption">
-                <strong>Speed Stick</strong><br>
-                Save up to $7.00 OFF any ONE (1)<br>
-                Expires 03-31-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_45" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_45" value="Speed Stick">
-                    <input type="hidden" name="item_number_45" value="C045">
-                    <input type="hidden" name="amount_45" value="2.00">
-                </div>
-            </div>
-        </td>
-    </tr>
-<tr>
-
-        <td>
-            <img src="images/statefair.jpg" alt="STATE FAIR">
-            <div class="caption">
-                <strong>STATE FAIR</strong><br>
-                Save up to $7.00 OFF any ONE (1)<br>
-                Expires 03-31-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_46" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_46" value="STATE FAIR">
-                    <input type="hidden" name="item_number_46" value="C046">
-                    <input type="hidden" name="amount_46" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/ocacola.jpg" alt="oca Cola" />
+      <div class="caption">
+        <strong>oca Cola</strong><br />
+        SKU: C037<br />
+        Save up to ‘<br />
+        Expires 12-31-25 it<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_37" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_37" value="oca Cola" />
+          <input type="hidden" name="item_number_37" value="C037" />
+          <input type="hidden" name="amount_37" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/charmin.jpg" alt="Charmin">
-            <div class="caption">
-                <strong>Charmin</strong><br>
-                Save up to $6.00 OFF any ONE (1)<br>
-                Expires 04-30-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_47" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_47" value="Charmin">
-                    <input type="hidden" name="item_number_47" value="C047">
-                    <input type="hidden" name="amount_47" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/silk.jpg" alt="Silk" />
+      <div class="caption">
+        <strong>Silk</strong><br />
+        SKU: C038<br />
+        Save up to $7.00 OFF any ONE (1)<br />
+        Expires 04-30-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_38" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_38" value="Silk" />
+          <input type="hidden" name="item_number_38" value="C038" />
+          <input type="hidden" name="amount_38" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/tillamook.jpg" alt="Tillamook">
-            <div class="caption">
-                <strong>Tillamook</strong><br>
-                Save up to save up to $9.00 OFF any ONE (1)<br>
-                Expires 03-31-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_48" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_48" value="Tillamook">
-                    <input type="hidden" name="item_number_48" value="C048">
-                    <input type="hidden" name="amount_48" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/clorox.jpg" alt="CLOROX" />
+      <div class="caption">
+        <strong>CLOROX</strong><br />
+        SKU: C039<br />
+        Save up to $7.00 OFF any ONE (1) ‘<br />
+        Expires 04-30-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_39" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_39" value="CLOROX" />
+          <input type="hidden" name="item_number_39" value="C039" />
+          <input type="hidden" name="amount_39" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        <td>
-            <img src="images/angelsoft.jpg" alt="Angel Soft">
-            <div class="caption">
-                <strong>Angel Soft</strong><br>
-                Save up to $7.00 OFF any ONE (1)<br>
-                Expires 03-31-26<br>
-                <div class="quantity">
-                    Qty: <input type="number" name="quantity_49" min="0" value="0"><br>
-                    <input type="hidden" name="item_name_49" value="Angel Soft">
-                    <input type="hidden" name="item_number_49" value="C049">
-                    <input type="hidden" name="amount_49" value="2.00">
-                </div>
-            </div>
-        </td>
+    <div class="product">
+      <img src="images/jimmydean.jpg" alt="jimmy Dean" />
+      <div class="caption">
+        <strong>jimmy Dean</strong><br />
+        SKU: C040<br />
+        Save up to $7.00 OFF any ONE (1)<br />
+        Expires 04-30-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_40" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_40" value="jimmy Dean" />
+          <input type="hidden" name="item_number_40" value="C040" />
+          <input type="hidden" name="amount_40" value="2.00" />
+        </div>
+      </div>
+    </div>
     
-        </tr>
-        </table>
-        <br>
-        <button type="submit">Proceed to PayPal</button>
-    </form>
+    <div class="product">
+      <img src="images/naturesweet.jpg" alt="NATURESWEET" />
+      <div class="caption">
+        <strong>NATURESWEET</strong><br />
+        SKU: C041<br />
+        Save up to $7.00 OFF any ONE (1) ‘<br />
+        Expires ‘oupon cannot be doubled coupon cannot be doubled coupon cannot be doubled<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_41" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_41" value="NATURESWEET" />
+          <input type="hidden" name="item_number_41" value="C041" />
+          <input type="hidden" name="amount_41" value="2.00" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="product">
+      <img src="images/oceanspray.jpg" alt="Ocean Spray" />
+      <div class="caption">
+        <strong>Ocean Spray</strong><br />
+        SKU: C042<br />
+        Save up to $8.00 OFF any ONE (1)<br />
+        Expires 03-31-26 coupon cannot be doubled<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_42" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_42" value="Ocean Spray" />
+          <input type="hidden" name="item_number_42" value="C042" />
+          <input type="hidden" name="amount_42" value="2.00" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="product">
+      <img src="images/estlebrand.jpg" alt="ESTLE BRAND" />
+      <div class="caption">
+        <strong>ESTLE BRAND</strong><br />
+        SKU: C043<br />
+        Save up to $7.00 OFF any ONE (1)<br />
+        Expires 04-30-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_43" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_43" value="ESTLE BRAND" />
+          <input type="hidden" name="item_number_43" value="C043" />
+          <input type="hidden" name="amount_43" value="2.00" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="product">
+      <img src="images/simplybeverages.jpg" alt="Simply Beverages" />
+      <div class="caption">
+        <strong>Simply Beverages</strong><br />
+        SKU: C044<br />
+        Save up to $6.00 OFF any ONE (1)<br />
+        Expires 03-31-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_44" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_44" value="Simply Beverages" />
+          <input type="hidden" name="item_number_44" value="C044" />
+          <input type="hidden" name="amount_44" value="2.00" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="product">
+      <img src="images/speedstick.jpg" alt="Speed Stick" />
+      <div class="caption">
+        <strong>Speed Stick</strong><br />
+        SKU: C045<br />
+        Save up to $7.00 OFF any ONE (1)<br />
+        Expires 03-31-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_45" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_45" value="Speed Stick" />
+          <input type="hidden" name="item_number_45" value="C045" />
+          <input type="hidden" name="amount_45" value="2.00" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="product">
+      <img src="images/statefair.jpg" alt="STATE FAIR" />
+      <div class="caption">
+        <strong>STATE FAIR</strong><br />
+        SKU: C046<br />
+        Save up to $7.00 OFF any ONE (1)<br />
+        Expires 03-31-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_46" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_46" value="STATE FAIR" />
+          <input type="hidden" name="item_number_46" value="C046" />
+          <input type="hidden" name="amount_46" value="2.00" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="product">
+      <img src="images/charmin.jpg" alt="Charmin" />
+      <div class="caption">
+        <strong>Charmin</strong><br />
+        SKU: C047<br />
+        Save up to $6.00 OFF any ONE (1)<br />
+        Expires 04-30-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_47" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_47" value="Charmin" />
+          <input type="hidden" name="item_number_47" value="C047" />
+          <input type="hidden" name="amount_47" value="2.00" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="product">
+      <img src="images/tillamook.jpg" alt="Tillamook" />
+      <div class="caption">
+        <strong>Tillamook</strong><br />
+        SKU: C048<br />
+        Save up to save up to $9.00 OFF any ONE (1)<br />
+        Expires 03-31-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_48" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_48" value="Tillamook" />
+          <input type="hidden" name="item_number_48" value="C048" />
+          <input type="hidden" name="amount_48" value="2.00" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="product">
+      <img src="images/angelsoft.jpg" alt="Angel Soft" />
+      <div class="caption">
+        <strong>Angel Soft</strong><br />
+        SKU: C049<br />
+        Save up to $7.00 OFF any ONE (1)<br />
+        Expires 03-31-26<br />
+        <div class="quantity">
+          Qty: <input type="number" name="quantity_49" min="0" value="0" /><br />
+          <input type="hidden" name="item_name_49" value="Angel Soft" />
+          <input type="hidden" name="item_number_49" value="C049" />
+          <input type="hidden" name="amount_49" value="2.00" />
+        </div>
+      </div>
+    </div>
+    
+<button type="submit">Proceed to PayPal</button>
+</form>
 </body>
 </html>
