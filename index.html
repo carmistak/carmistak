@@ -3,45 +3,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Storefront</title>
+    <title>Coupon Storefront</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
             margin: 0;
             padding: 20px;
+            background: #f5f5f5;
         }
-        .store {
-            display: flex;
-            flex-wrap: wrap;
+        h1 {
+            text-align: center;
+        }
+        .storefront {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-            justify-content: flex-start;
+            padding: 20px;
         }
         .product {
-            background: #fff;
-            border: 1px solid #ccc;
+            background: white;
+            border: 1px solid #ddd;
             border-radius: 8px;
-            width: 300px;
             padding: 10px;
-            box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
         }
         .product img {
-            width: 100%;
-            height: auto;
+            max-width: 100%;
             border-radius: 4px;
         }
-        .product h2 {
-            font-size: 1.2em;
+        form {
+            margin-top: 40px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
             margin: 10px 0 5px;
         }
-        .product p {
-            margin: 4px 0;
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #0070ba;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #005fa3;
         }
     </style>
 </head>
 <body oncontextmenu="return false;">
-    <h1>My Coupon Storefront</h1>
-    <div class="store">
+    <h1>Welcome to the Coupon Storefront</h1>
+
+    <div class="storefront">
         <div class="product">
             <img src="images/organic_girl.jpg" alt="Organic Girl product">
             <h2>Organic Girl product</h2>
@@ -67,5 +96,33 @@
             <p><strong>Expires:</strong> 05-31-26</p>
         </div>
     </div>
+
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="business" value="carmenistak@gmail.com">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="item_name" value="Coupon Bundle Order">
+        <input type="hidden" name="amount" value="2.00">
+        <input type="hidden" name="currency_code" value="USD">
+
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" required>
+
+        <label for="address1">Shipping Address Line 1</label>
+        <input type="text" id="address1" name="address1" required>
+
+        <label for="address2">Shipping Address Line 2</label>
+        <input type="text" id="address2" name="address2">
+
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" required>
+
+        <label for="zip">ZIP Code</label>
+        <input type="text" id="zip" name="zip" required>
+
+        <button type="submit">Proceed to PayPal</button>
+    </form>
 </body>
 </html>
