@@ -2,127 +2,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Coupon Storefront</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background: #f5f5f5;
-        }
-        h1 {
-            text-align: center;
-        }
-        .storefront {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-        .product {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        .product img {
-            max-width: 100%;
-            border-radius: 4px;
-        }
-        form {
-            margin-top: 40px;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 8px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        label {
-            display: block;
-            margin: 10px 0 5px;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            background-color: #0070ba;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #005fa3;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Coupon Storefront with Quantity Selection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 {
+      text-align: center;
+    }
+    form {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .product {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 15px;
+    }
+    .product img {
+      width: 120px;
+      height: auto;
+      border-radius: 6px;
+      margin-right: 20px;
+    }
+    .product-info {
+      flex: 1;
+    }
+    label, input {
+      font-size: 14px;
+    }
+    .product input[type="number"] {
+      width: 60px;
+      padding: 6px;
+      font-size: 14px;
+    }
+    button {
+      display: block;
+      width: 100%;
+      background-color: #0070ba;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
 </head>
 <body oncontextmenu="return false;">
-    <h1>Welcome to the Coupon Storefront</h1>
+  <h1>Coupon Storefront</h1>
 
-    <div class="storefront">
-        <div class="product">
-            <img src="images/organic_girl.jpg" alt="Organic Girl product">
-            <h2>Organic Girl product</h2>
-            <p><strong>SKU:</strong> C480</p>
-            <p><strong>Price:</strong> $2.00</p>
-            <p><strong>Max Discount:</strong> $7.00</p>
-            <p><strong>Expires:</strong> 05-31-26</p>
-        </div>
-        <div class="product">
-            <img src="images/nestle_nesquick.jpg" alt="Nestle Nesquik product">
-            <h2>Nestle Nesquik product</h2>
-            <p><strong>SKU:</strong> C479</p>
-            <p><strong>Price:</strong> $2.00</p>
-            <p><strong>Max Discount:</strong> $6.00</p>
-            <p><strong>Expires:</strong> 05-31-26</p>
-        </div>
-        <div class="product">
-            <img src="images/glad_trash_bags.jpg" alt="Glad Trash Bags product">
-            <h2>Glad Trash Bags product</h2>
-            <p><strong>SKU:</strong> C478</p>
-            <p><strong>Price:</strong> $2.00</p>
-            <p><strong>Max Discount:</strong> $6.00</p>
-            <p><strong>Expires:</strong> 05-31-26</p>
-        </div>
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+    <input type="hidden" name="business" value="carmenistak@gmail.com">
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="upload" value="1">
+    <input type="hidden" name="currency_code" value="USD">
+
+    <div class="product">
+      <img src="images/organic_girl.jpg" alt="Organic Girl">
+      <div class="product-info">
+        <strong>Organic Girl</strong><br>
+        SKU: C480 — $2.00 each<br>
+        <label>Quantity:
+          <input type="number" name="quantity_1" min="0" value="0">
+        </label>
+        <input type="hidden" name="item_name_1" value="Organic Girl">
+        <input type="hidden" name="amount_1" value="2.00">
+      </div>
     </div>
 
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-        <input type="hidden" name="business" value="carmenistak@gmail.com">
-        <input type="hidden" name="cmd" value="_xclick">
-        <input type="hidden" name="item_name" value="Coupon Bundle Order">
-        <input type="hidden" name="amount" value="2.00">
-        <input type="hidden" name="currency_code" value="USD">
+    <div class="product">
+      <img src="images/nestle_nesquick.jpg" alt="Nestle Nesquick">
+      <div class="product-info">
+        <strong>Nestle Nesquick</strong><br>
+        SKU: C479 — $2.00 each<br>
+        <label>Quantity:
+          <input type="number" name="quantity_2" min="0" value="0">
+        </label>
+        <input type="hidden" name="item_name_2" value="Nestle Nesquick">
+        <input type="hidden" name="amount_2" value="2.00">
+      </div>
+    </div>
 
-        <label for="fullname">Full Name</label>
-        <input type="text" id="fullname" name="fullname" required>
+    <div class="product">
+      <img src="images/glad_trash_bags.jpg" alt="Glad Trash Bags">
+      <div class="product-info">
+        <strong>Glad Trash Bags</strong><br>
+        SKU: C478 — $2.00 each<br>
+        <label>Quantity:
+          <input type="number" name="quantity_3" min="0" value="0">
+        </label>
+        <input type="hidden" name="item_name_3" value="Glad Trash Bags">
+        <input type="hidden" name="amount_3" value="2.00">
+      </div>
+    </div>
 
-        <label for="address1">Shipping Address Line 1</label>
-        <input type="text" id="address1" name="address1" required>
-
-        <label for="address2">Shipping Address Line 2</label>
-        <input type="text" id="address2" name="address2">
-
-        <label for="city">City</label>
-        <input type="text" id="city" name="city" required>
-
-        <label for="state">State</label>
-        <input type="text" id="state" name="state" required>
-
-        <label for="zip">ZIP Code</label>
-        <input type="text" id="zip" name="zip" required>
-
-        <button type="submit">Proceed to PayPal</button>
-    </form>
+    <button type="submit">Proceed to PayPal</button>
+  </form>
 </body>
 </html>
