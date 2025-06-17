@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coupon Storefront</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 20px; }
+        h1 { text-align: center; }
+        .product-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+        .product { background: white; border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 200px; text-align: center; }
+        .product img { max-width: 100%; height: auto; border-radius: 4px; }
+        .checkout-form { margin-top: 40px; max-width: 600px; margin-left: auto; margin-right: auto; padding: 20px; background: #fff; border: 1px solid #ccc; border-radius: 8px; }
+        .checkout-form input, .checkout-form textarea { width: 100%; padding: 10px; margin-top: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; }
+        .checkout-form button { background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+        .checkout-form button:hover { background-color: #218838; }
+    </style>
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
+</head>
+<body onselectstart="return false;" onmousedown="return false;" style="-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;">
+    <h1>Coupon Storefront</h1>
+    <div class="product-grid">
+        
+<div class="product">
+    <img src="images/nestle.png" alt="Nestle">
+    <h3>Nestle</h3>
+    <p><strong>SKU:</strong> C415</p>
+    <p><strong>Price:</strong> $2.00</p>
+    <p><strong>Max Discount:</strong> $7.00</p>
+</div>
+
+<div class="product">
+    <img src="images/simplybeverages.png" alt="Simply Beverages">
+    <h3>Simply Beverages</h3>
+    <p><strong>SKU:</strong> C414</p>
+    <p><strong>Price:</strong> $2.00</p>
+    <p><strong>Max Discount:</strong> $6.00</p>
+</div>
+
+<div class="product">
+    <img src="images/speedstick.png" alt="Speed Stick">
+    <h3>Speed Stick</h3>
+    <p><strong>SKU:</strong> C413</p>
+    <p><strong>Price:</strong> $2.00</p>
+    <p><strong>Max Discount:</strong> $7.00</p>
+</div>
+
+<div class="product">
+    <img src="images/statefair.png" alt="State Fair">
+    <h3>State Fair</h3>
+    <p><strong>SKU:</strong> C412</p>
+    <p><strong>Price:</strong> $2.00</p>
+    <p><strong>Max Discount:</strong> $7.00</p>
+</div>
+
+<div class="product">
+    <img src="images/charmin.png" alt="Charmin">
+    <h3>Charmin</h3>
+    <p><strong>SKU:</strong> C411</p>
+    <p><strong>Price:</strong> $2.00</p>
+    <p><strong>Max Discount:</strong> $6.00</p>
+</div>
+
+<div class="product">
+    <img src="images/tillamook.png" alt="Tillamook">
+    <h3>Tillamook</h3>
+    <p><strong>SKU:</strong> C410</p>
+    <p><strong>Price:</strong> $2.00</p>
+    <p><strong>Max Discount:</strong> $9.00</p>
+</div>
+
+<div class="product">
+    <img src="images/softsoap.png" alt="Softsoap">
+    <h3>Softsoap</h3>
+    <p><strong>SKU:</strong> C409</p>
+    <p><strong>Price:</strong> $2.00</p>
+    <p><strong>Max Discount:</strong> $8.00</p>
+</div>
+
+<div class="product">
+    <img src="images/prairiefarms.png" alt="Prairie Farms">
+    <h3>Prairie Farms</h3>
+    <p><strong>SKU:</strong> C408</p>
+    <p><strong>Price:</strong> $2.00</p>
+    <p><strong>Max Discount:</strong> $7.00</p>
+</div>
+
+<div class="product">
+    <img src="images/planters.png" alt="Planters">
+    <h3>Planters</h3>
+    <p><strong>SKU:</strong> C407</p>
+    <p><strong>Price:</strong> $2.00</p>
+    <p><strong>Max Discount:</strong> $8.00</p>
+</div>
+
+<div class="product">
+    <img src="images/aidells.png" alt="Aidells">
+    <h3>Aidells</h3>
+    <p><strong>SKU:</strong> C406</p>
+    <p><strong>Price:</strong> $2.00</p>
+    <p><strong>Max Discount:</strong> $9.00</p>
+</div>
+
+    </div>
+
+    <div class="checkout-form">
+        <h2>Place Your Order</h2>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="carmenistak@gmail.com">
+            <input type="hidden" name="item_name" value="Coupon Bundle">
+            <input type="hidden" name="amount" value="2.00">
+            <input type="hidden" name="currency_code" value="USD">
+            <label>First Name</label>
+            <input type="text" name="first_name" required>
+<label>Last Name</label>
+            <input type="text" name="last_name" required>
+            <label>Email</label>
+            <input type="email" name="email" required>
+            <label>Address Line 1</label>
+            <input type="text" name="address1" required>
+<label>Address Line 2</label>
+            <input type="text" name="address2">
+<label>City</label>
+            <input type="text" name="city" required>
+<label>State</label>
+            <input type="text" name="state" required>
+<label>Zip Code</label>
+            <input type="text" name="zip" required>
+            <button type="submit">Proceed to PayPal</button>
+        </form>
+    </div>
+</body>
+</html>
