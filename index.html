@@ -1,112 +1,134 @@
 
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<title>Product Listings</title>
-<style>
-        body {
+    <meta charset="UTF-8">
+    <title>Product Storefront</title>
+    <style>
+        body {{
             font-family: Arial, sans-serif;
-        }
-        .product {
+            padding: 20px;
+            user-select: none;
+        }}
+        .product {{
             display: flex;
-            align-items: flex-start;
-            border: 1px solid #ccc;
-            padding: 16px;
-            margin: 16px auto;
-            width: 80%;
-            background-color: #f9f9f9;
-        }
-        .product img {
-            max-width: 240px;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            padding: 15px 0;
+        }}
+        .product img {{
+            width: 100px;
             height: auto;
-            margin-right: 24px;
-        }
-        .details {
+            margin-right: 20px;
+        }}
+        .details {{
             flex: 1;
-        }
-        .title {
-            font-size: 20px;
+        }}
+        .title {{
+            font-size: 1.2em;
             font-weight: bold;
-            margin-bottom: 8px;
-        }
-        .description {
-            margin-bottom: 4px;
-        }
-        .price {
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-        .paypal-button {
-            margin-top: 12px;
+        }}
+        .save, .expire {{
+            font-size: 0.95em;
+            color: #555;
+        }}
+        .quantity {{
+            margin-left: auto;
+            font-size: 1em;
+        }}
+        .quantity input {{
+            width: 40px;
+            padding: 3px;
+            text-align: center;
+        }}
+        .paypal-button {{
+            text-align: center;
+            margin-top: 40px;
+        }}
+        .paypal-button button {{
             background-color: #0070ba;
             color: white;
+            font-size: 1.2em;
+            padding: 10px 25px;
             border: none;
-            padding: 12px 24px;
-            font-size: 16px;
+            border-radius: 5px;
             cursor: pointer;
-        }
-        .paypal-button:hover {
-            background-color: #005b9e;
-        }
+        }}
     </style>
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
 </head>
 <body>
-<div class="product">
-<img alt="organicgirl product" src="images/C480.png"/>
-<div class="details">
-<div class="title">organicgirl product</div>
-<div class="description">Save up to $7.00 OFF any ONE (1) organicgirl product.</div>
-<div class="description">Expires 05-31-26</div>
-<div class="description">SKU: C480</div>
-<div class="price">Price: $2.00</div>
-<button class="paypal-button">Proceed to PayPal</button>
-</div>
-</div>
-<div class="product">
-<img alt="Nestle Nesquik product" src="images/C479.png"/>
-<div class="details">
-<div class="title">Nestle Nesquik product</div>
-<div class="description">Save up to $6.00 OFF any ONE (1) Nestle Nesquik product.</div>
-<div class="description">Expires 05-31-26</div>
-<div class="description">SKU: C479</div>
-<div class="price">Price: $2.00</div>
-<button class="paypal-button">Proceed to PayPal</button>
-</div>
-</div>
-<div class="product">
-<img alt="Glad Trash Bags product" src="images/C478.png"/>
-<div class="details">
-<div class="title">Glad Trash Bags product</div>
-<div class="description">Save up to $6.00 OFF any ONE (1) Glad Trash Bags product.</div>
-<div class="description">Expires 05-31-26</div>
-<div class="description">SKU: C478</div>
-<div class="price">Price: $2.00</div>
-<button class="paypal-button">Proceed to PayPal</button>
-</div>
-</div>
-<div class="product">
-<img alt="2000 FLUSHES product" src="images/C477.png"/>
-<div class="details">
-<div class="title">2000 FLUSHES product</div>
-<div class="description">Save up to $6.00 OFF any ONE (1) 2000 FLUSHES product.</div>
-<div class="description">Expires 05-31-26</div>
-<div class="description">SKU: C477</div>
-<div class="price">Price: $2.00</div>
-<button class="paypal-button">Proceed to PayPal</button>
-</div>
-</div>
-<div class="product">
-<img alt="Armor All product" src="images/C476.png"/>
-<div class="details">
-<div class="title">Armor All product</div>
-<div class="description">Save up to $8.00 OFF any ONE (1) Armor All product.</div>
-<div class="description">Expires 05-31-26</div>
-<div class="description">SKU: C476</div>
-<div class="price">Price: $2.00</div>
-<button class="paypal-button">Proceed to PayPal</button>
-</div>
-</div>
+    <h1>Product Storefront</h1>
+
+    <div class="product">
+        <img src="images/C471.png" alt="Organic Girl">
+        <div class="details">
+            <div class="title">Organic Girl</div>
+            <div class="save">Save up to $7.00 OFF any ONE (1) Organic Girl product.</div>
+            <div class="expire">Expires: Expires 05-31-26</div>
+        </div>
+        <div class="quantity">
+            Qty: <input type="number" min="0" max="99">
+        </div>
+    </div>
+    
+    <div class="product">
+        <img src="images/C473.png" alt="Nestle Nesquik">
+        <div class="details">
+            <div class="title">Nestle Nesquik</div>
+            <div class="save">Save up to $5.00 OFF any ONE (1) Nestle Nesquik product.</div>
+            <div class="expire">Expires: Expires 05-31-26</div>
+        </div>
+        <div class="quantity">
+            Qty: <input type="number" min="0" max="99">
+        </div>
+    </div>
+    
+    <div class="product">
+        <img src="images/C472.png" alt="Glad Trash Bags">
+        <div class="details">
+            <div class="title">Glad Trash Bags</div>
+            <div class="save">Save up to $6.00 OFF any ONE (1) Glad Trash Bags product.</div>
+            <div class="expire">Expires: Expires 05-31-26</div>
+        </div>
+        <div class="quantity">
+            Qty: <input type="number" min="0" max="99">
+        </div>
+    </div>
+    
+    <div class="product">
+        <img src="images/C474.png" alt="2000 Flushes">
+        <div class="details">
+            <div class="title">2000 Flushes</div>
+            <div class="save">Save up to $6.00 OFF any ONE (1) 2000 Flushes product.</div>
+            <div class="expire">Expires: Expires 05-31-26</div>
+        </div>
+        <div class="quantity">
+            Qty: <input type="number" min="0" max="99">
+        </div>
+    </div>
+    
+    <div class="product">
+        <img src="images/C475.png" alt="Armor All">
+        <div class="details">
+            <div class="title">Armor All</div>
+            <div class="save">Save up to $8.00 OFF any ONE (1) Armor All product.</div>
+            <div class="expire">Expires: Expires 05-31-26</div>
+        </div>
+        <div class="quantity">
+            Qty: <input type="number" min="0" max="99">
+        </div>
+    </div>
+    
+    <div class="paypal-button">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <input type="hidden" name="cmd" value="_cart">
+            <input type="hidden" name="upload" value="1">
+            <input type="hidden" name="business" value="carmenistak@gmail.com">
+            <button type="submit">Proceed to PayPal</button>
+        </form>
+    </div>
 </body>
 </html>
