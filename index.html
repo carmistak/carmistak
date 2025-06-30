@@ -1,266 +1,155 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Coupon Storefront</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #f4f6fa; margin: 0; }
-        h1 { text-align: center; margin: 32px 0 24px 0; font-size: 2.4rem; }
-        .product-row {
-            display: flex;
-            align-items: flex-start;
-            background: #fff;
-            margin: 18px auto;
-            max-width: 820px;
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-            padding: 16px 20px;
-            gap: 30px;
-        }
-        .product-row img {
-            width: 155px;
-            height: 150px;
-            object-fit: contain;
-            border-radius: 7px;
-            background: #f9f9f9;
-            border: 1px solid #eee;
-        }
-        .product-info {
-            flex: 1;
-        }
-        .product-title {
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-        .product-savings {
-            font-size: 1.08rem;
-            margin-bottom: 5px;
-            color: #04724d;
-        }
-        .product-expiry {
-            font-size: 1.04rem;
-            margin-bottom: 10px;
-        }
-        .product-meta {
-            font-size: 1rem;
-            margin-bottom: 3px;
-            color: #333;
-        }
-        .product-price {
-            font-size: 1.18rem;
-            font-weight: bold;
-            margin-bottom: 0;
-        }
-        .quantity-section {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            float: right;
-        }
-        .quantity-section label { font-weight: bold; }
-        .quantity-section input[type="number"] {
-            width: 38px;
-            padding: 2px 3px;
-            font-size: 1.13rem;
-            text-align: right;
-        }
-        .paypal-btn {
-            display: block;
-            width: 360px;
-            margin: 36px auto 20px auto;
-            padding: 14px 0;
-            font-size: 1.28rem;
-            background: #1570ef;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 1px 8px rgba(21,112,239,0.09);
-            transition: background 0.18s;
-        }
-        .paypal-btn:hover { background: #1160c1; }
-        /* Disable right-click and highlight */
-        body, .product-row, .product-info {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-        body { -webkit-touch-callout: none; }
-    </style>
-    <script>
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        function submitToPaypal() {
-            var form = document.createElement('form');
-            form.method = 'POST';
-            form.action = 'https://www.paypal.com/cgi-bin/webscr';
-            form.target = '_blank';
-            form.innerHTML = ''
-                + '<input type="hidden" name="business" value="carmenistak@gmail.com">'
-                + '<input type="hidden" name="cmd" value="_cart">'
-                + '<input type="hidden" name="upload" value="1">';
-            var idx = 1;
-
-            var qty_C480 = document.getElementById('qty_C480').value;
-            if (qty_C480 > 0) {
-                form.innerHTML += '<input type="hidden" name="item_name_' + idx + '" value="organicgirl product">';
-                form.innerHTML += '<input type="hidden" name="item_number_' + idx + '" value="C480">';
-                form.innerHTML += '<input type="hidden" name="amount_' + idx + '" value="2.00">';
-                form.innerHTML += '<input type="hidden" name="quantity_' + idx + '" value="' + qty_C480 + '">';
-                idx++;
-            }
-
-            var qty_C479 = document.getElementById('qty_C479').value;
-            if (qty_C479 > 0) {
-                form.innerHTML += '<input type="hidden" name="item_name_' + idx + '" value="Nestle Nesquik product">';
-                form.innerHTML += '<input type="hidden" name="item_number_' + idx + '" value="C479">';
-                form.innerHTML += '<input type="hidden" name="amount_' + idx + '" value="2.00">';
-                form.innerHTML += '<input type="hidden" name="quantity_' + idx + '" value="' + qty_C479 + '">';
-                idx++;
-            }
-
-            var qty_C478 = document.getElementById('qty_C478').value;
-            if (qty_C478 > 0) {
-                form.innerHTML += '<input type="hidden" name="item_name_' + idx + '" value="Glad Trash Bags product">';
-                form.innerHTML += '<input type="hidden" name="item_number_' + idx + '" value="C478">';
-                form.innerHTML += '<input type="hidden" name="amount_' + idx + '" value="2.00">';
-                form.innerHTML += '<input type="hidden" name="quantity_' + idx + '" value="' + qty_C478 + '">';
-                idx++;
-            }
-
-            var qty_C477 = document.getElementById('qty_C477').value;
-            if (qty_C477 > 0) {
-                form.innerHTML += '<input type="hidden" name="item_name_' + idx + '" value="2000 FLUSHES product">';
-                form.innerHTML += '<input type="hidden" name="item_number_' + idx + '" value="C477">';
-                form.innerHTML += '<input type="hidden" name="amount_' + idx + '" value="2.00">';
-                form.innerHTML += '<input type="hidden" name="quantity_' + idx + '" value="' + qty_C477 + '">';
-                idx++;
-            }
-
-            var qty_C476 = document.getElementById('qty_C476').value;
-            if (qty_C476 > 0) {
-                form.innerHTML += '<input type="hidden" name="item_name_' + idx + '" value="Armor All product">';
-                form.innerHTML += '<input type="hidden" name="item_number_' + idx + '" value="C476">';
-                form.innerHTML += '<input type="hidden" name="amount_' + idx + '" value="2.00">';
-                form.innerHTML += '<input type="hidden" name="quantity_' + idx + '" value="' + qty_C476 + '">';
-                idx++;
-            }
-
-            var qty_C475 = document.getElementById('qty_C475').value;
-            if (qty_C475 > 0) {
-                form.innerHTML += '<input type="hidden" name="item_name_' + idx + '" value="CELESTIAL SEASONINGS">';
-                form.innerHTML += '<input type="hidden" name="item_number_' + idx + '" value="C475">';
-                form.innerHTML += '<input type="hidden" name="amount_' + idx + '" value="2.00">';
-                form.innerHTML += '<input type="hidden" name="quantity_' + idx + '" value="' + qty_C475 + '">';
-                idx++;
-            }
-
-            var qty_C474 = document.getElementById('qty_C474').value;
-            if (qty_C474 > 0) {
-                form.innerHTML += '<input type="hidden" name="item_name_' + idx + '" value="Domino product">';
-                form.innerHTML += '<input type="hidden" name="item_number_' + idx + '" value="C474">';
-                form.innerHTML += '<input type="hidden" name="amount_' + idx + '" value="2.00">';
-                form.innerHTML += '<input type="hidden" name="quantity_' + idx + '" value="' + qty_C474 + '">';
-                idx++;
-            }
-
-            var qty_C473 = document.getElementById('qty_C473').value;
-            if (qty_C473 > 0) {
-                form.innerHTML += '<input type="hidden" name="item_name_' + idx + '" value="Velveeta product">';
-                form.innerHTML += '<input type="hidden" name="item_number_' + idx + '" value="C473">';
-                form.innerHTML += '<input type="hidden" name="amount_' + idx + '" value="2.00">';
-                form.innerHTML += '<input type="hidden" name="quantity_' + idx + '" value="' + qty_C473 + '">';
-                idx++;
-            }
-
-            var qty_C472 = document.getElementById('qty_C472').value;
-            if (qty_C472 > 0) {
-                form.innerHTML += '<input type="hidden" name="item_name_' + idx + '" value="BURT'S BEES product">';
-                form.innerHTML += '<input type="hidden" name="item_number_' + idx + '" value="C472">';
-                form.innerHTML += '<input type="hidden" name="amount_' + idx + '" value="2.00">';
-                form.innerHTML += '<input type="hidden" name="quantity_' + idx + '" value="' + qty_C472 + '">';
-                idx++;
-            }
-
-            var qty_C471 = document.getElementById('qty_C471').value;
-            if (qty_C471 > 0) {
-                form.innerHTML += '<input type="hidden" name="item_name_' + idx + '" value="Colgate product">';
-                form.innerHTML += '<input type="hidden" name="item_number_' + idx + '" value="C471">';
-                form.innerHTML += '<input type="hidden" name="amount_' + idx + '" value="2.00">';
-                form.innerHTML += '<input type="hidden" name="quantity_' + idx + '" value="' + qty_C471 + '">';
-                idx++;
-            }
-
-            var qty_C470 = document.getElementById('qty_C470').value;
-            if (qty_C470 > 0) {
-                form.innerHTML += '<input type="hidden" name="item_name_' + idx + '" value="Organic Valley product">';
-                form.innerHTML += '<input type="hidden" name="item_number_' + idx + '" value="C470">';
-                form.innerHTML += '<input type="hidden" name="amount_' + idx + '" value="2.00">';
-                form.innerHTML += '<input type="hidden" name="quantity_' + idx + '" value="' + qty_C470 + '">';
-                idx++;
-            }
-
-            var qty_C469 = document.getElementById('qty_C469').value;
-            if (qty_C469 > 0) {
-                form.innerHTML += '<input type="hidden" name="item_name_' + idx + '" value="pledge product">';
-                form.innerHTML += '<input type="hidden" name="item_number_' + idx + '" value="C469">';
-                form.innerHTML += '<input type="hidden" name="amount_' + idx + '" value="2.00">';
-                form.innerHTML += '<input type="hidden" name="quantity_' + idx + '" value="' + qty_C469 + '">';
-                idx++;
-            }
-
-            var qty_C468 = document.getElementById('qty_C468').value;
-            if (qty_C468 > 0) {
-                form.innerHTML += '<input type="hidden" name="item_name_' + idx + '" value="Amy's product">';
-                form.innerHTML += '<input type="hidden" name="item_number_' + idx + '" value="C468">';
-                form.innerHTML += '<input type="hidden" name="amount_' + idx + '" value="2.00">';
-                form.innerHTML += '<input type="hidden" name="quantity_' + idx + '" value="' + qty_C468 + '">';
-                idx++;
-            }
-
-            var qty_C467 = document.getElementById('qty_C467').value;
-            if (qty_C467 > 0) {
-                form.innerHTML += '<input type="hidden" name="item_name_' + idx + '" value="BUBBA burger product">';
-                form.innerHTML += '<input type="hidden" name="item_number_' + idx + '" value="C467">';
-                form.innerHTML += '<input type="hidden" name="amount_' + idx + '" value="2.00">';
-                form.innerHTML += '<input type="hidden" name="quantity_' + idx + '" value="' + qty_C467 + '">';
-                idx++;
-            }
-
-            var qty_C466 = document.getElementById('qty_C466').value;
-            if (qty_C466 > 0) {
-                form.innerHTML += '<input type="hidden" name="item_name_' + idx + '" value="TAMPAX product">';
-                form.innerHTML += '<input type="hidden" name="item_number_' + idx + '" value="C466">';
-                form.innerHTML += '<input type="hidden" name="amount_' + idx + '" value="2.00">';
-                form.innerHTML += '<input type="hidden" name="quantity_' + idx + '" value="' + qty_C466 + '">';
-                idx++;
-            }
-
-            if (idx === 1) {
-                alert('Please select at least one product.');
-                return false;
-            }
-            document.body.appendChild(form);
-            form.submit();
-            document.body.removeChild(form);
-            return false;
-        }
-    </script>
+<meta charset="UTF-8">
+<title>Coupon Storefront</title>
+<style>
+    body { font-family: Arial, sans-serif; background: #f4f6fa; margin: 0; }
+    h1 { text-align: center; margin: 32px 0 24px 0; font-size: 2.4rem; }
+    .product-row {
+        display: flex; align-items: flex-start; background: #fff; margin: 18px auto;
+        max-width: 820px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        padding: 16px 20px; gap: 30px;
+    }
+    .product-row img { width: 155px; height: 150px; object-fit: contain; border-radius: 7px;
+        background: #f9f9f9; border: 1px solid #eee; }
+    .product-info { flex: 1; }
+    .product-title { font-size: 1.4rem; font-weight: bold; margin-bottom: 8px; }
+    .product-savings { font-size: 1.08rem; margin-bottom: 5px; color: #04724d; }
+    .product-expiry { font-size: 1.04rem; margin-bottom: 10px; }
+    .product-meta { font-size: 1rem; margin-bottom: 3px; color: #333; }
+    .product-price { font-size: 1.18rem; font-weight: bold; margin-bottom: 0; }
+    .quantity-section { display: flex; align-items: center; gap: 7px; float: right; }
+    .quantity-section label { font-weight: bold; }
+    .quantity-section input[type="number"] {
+        width: 38px; padding: 2px 3px; font-size: 1.13rem; text-align: right;
+    }
+    .paypal-btn {
+        display: block; width: 360px; margin: 36px auto 20px auto; padding: 14px 0; font-size: 1.28rem;
+        background: #1570ef; color: #fff; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;
+        box-shadow: 0 1px 8px rgba(21,112,239,0.09); transition: background 0.18s;
+    }
+    .paypal-btn:hover { background: #1160c1; }
+    body, .product-row, .product-info { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+    body { -webkit-touch-callout: none; }
+</style>
+<script>document.addEventListener('contextmenu', e => e.preventDefault());</script>
 </head>
 <body>
-    <h1>Coupon Storefront</h1>
-    <!-- PRODUCTS START -->
+<h1>Coupon Storefront</h1>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+
+    <div class="product-row">
+        <img src="images/C482.png" alt="ARM & HAMMER Cat Litter">
+        <div class="product-info">
+            <div class="product-title">ARM & HAMMER Cat Litter</div>
+            <div class="product-savings">Save up to $6.00 OFF any ONE (1) ARM & HAMMER Cat Litter product.</div>
+            <div class="product-expiry">Expires 06-30-26</div>
+            <div class="product-meta">SKU: C482</div>
+            <div class="product-price">$2.00</div>
+        </div>
+        <div class="quantity-section">
+            <label for="qty_C482">Qty:</label>
+            <input type="number" id="qty_C482" name="quantity_C482" min="0" max="99" value="0">
+        </div>
+    </div>
+
+    <div class="product-row">
+        <img src="images/C481.png" alt="GOGO SQUEEZ">
+        <div class="product-info">
+            <div class="product-title">GOGO SQUEEZ</div>
+            <div class="product-savings">Save up to $5.00 OFF any ONE (1) Materne GOGO SQUEEZ product.</div>
+            <div class="product-expiry">Expires 03-31-26</div>
+            <div class="product-meta">SKU: C481</div>
+            <div class="product-price">$2.00</div>
+        </div>
+        <div class="quantity-section">
+            <label for="qty_C481">Qty:</label>
+            <input type="number" id="qty_C481" name="quantity_C481" min="0" max="99" value="0">
+        </div>
+    </div>
+
+    <div class="product-row">
+        <img src="images/C487.png" alt="TRESemme">
+        <div class="product-info">
+            <div class="product-title">TRESemme</div>
+            <div class="product-savings">Save up to $8.00 OFF any ONE (1) TRESemme product.</div>
+            <div class="product-expiry">Expires 06-30-26</div>
+            <div class="product-meta">SKU: C487</div>
+            <div class="product-price">$2.00</div>
+        </div>
+        <div class="quantity-section">
+            <label for="qty_C487">Qty:</label>
+            <input type="number" id="qty_C487" name="quantity_C487" min="0" max="99" value="0">
+        </div>
+    </div>
+
+    <div class="product-row">
+        <img src="images/C486.png" alt="Seventh Generation">
+        <div class="product-info">
+            <div class="product-title">Seventh Generation</div>
+            <div class="product-savings">Save up to $7.00 OFF any ONE (1) Seventh Generation product.</div>
+            <div class="product-expiry">Expires 06-30-26</div>
+            <div class="product-meta">SKU: C486</div>
+            <div class="product-price">$2.00</div>
+        </div>
+        <div class="quantity-section">
+            <label for="qty_C486">Qty:</label>
+            <input type="number" id="qty_C486" name="quantity_C486" min="0" max="99" value="0">
+        </div>
+    </div>
+
+    <div class="product-row">
+        <img src="images/C485.png" alt="SeaPak">
+        <div class="product-info">
+            <div class="product-title">SeaPak</div>
+            <div class="product-savings">Save up to $10.00 OFF any ONE (1) SeaPak product.</div>
+            <div class="product-expiry">Expires 06-30-26</div>
+            <div class="product-meta">SKU: C485</div>
+            <div class="product-price">$2.00</div>
+        </div>
+        <div class="quantity-section">
+            <label for="qty_C485">Qty:</label>
+            <input type="number" id="qty_C485" name="quantity_C485" min="0" max="99" value="0">
+        </div>
+    </div>
+
+    <div class="product-row">
+        <img src="images/C484.png" alt="KETTLE BRAND">
+        <div class="product-info">
+            <div class="product-title">KETTLE BRAND</div>
+            <div class="product-savings">Save up to $6.00 OFF any ONE (1) KETTLE BRAND product.</div>
+            <div class="product-expiry">Expires 06-30-26</div>
+            <div class="product-meta">SKU: C484</div>
+            <div class="product-price">$2.00</div>
+        </div>
+        <div class="quantity-section">
+            <label for="qty_C484">Qty:</label>
+            <input type="number" id="qty_C484" name="quantity_C484" min="0" max="99" value="0">
+        </div>
+    </div>
+
+    <div class="product-row">
+        <img src="images/C483.png" alt="HELLMANN'S">
+        <div class="product-info">
+            <div class="product-title">HELLMANN'S</div>
+            <div class="product-savings">Save up to $8.00 OFF any ONE (1) HELLMANN'S product.</div>
+            <div class="product-expiry">Expires 06-30-26</div>
+            <div class="product-meta">SKU: C483</div>
+            <div class="product-price">$2.00</div>
+        </div>
+        <div class="quantity-section">
+            <label for="qty_C483">Qty:</label>
+            <input type="number" id="qty_C483" name="quantity_C483" min="0" max="99" value="0">
+        </div>
+    </div>
 
     <div class="product-row">
         <img src="images/C480.png" alt="organicgirl product">
         <div class="product-info">
             <div class="product-title">organicgirl product</div>
-            <div class="product-savings">Save up to $7.00 OFF any ONE (1) organicgirl product.</div>
-            <div class="product-expiry">Expires 05-31-26</div>
+            <div class="product-savings">nan</div>
+            <div class="product-expiry">Expires nan</div>
             <div class="product-meta">SKU: C480</div>
             <div class="product-price">$2.00</div>
         </div>
@@ -269,13 +158,13 @@
             <input type="number" id="qty_C480" name="quantity_C480" min="0" max="99" value="0">
         </div>
     </div>
-    
+
     <div class="product-row">
         <img src="images/C479.png" alt="Nestle Nesquik product">
         <div class="product-info">
             <div class="product-title">Nestle Nesquik product</div>
-            <div class="product-savings">Save up to $6.00 OFF any ONE (1) Nestle Nesquik product.</div>
-            <div class="product-expiry">Expires 05-31-26</div>
+            <div class="product-savings">nan</div>
+            <div class="product-expiry">Expires nan</div>
             <div class="product-meta">SKU: C479</div>
             <div class="product-price">$2.00</div>
         </div>
@@ -284,13 +173,13 @@
             <input type="number" id="qty_C479" name="quantity_C479" min="0" max="99" value="0">
         </div>
     </div>
-    
+
     <div class="product-row">
         <img src="images/C478.png" alt="Glad Trash Bags product">
         <div class="product-info">
             <div class="product-title">Glad Trash Bags product</div>
-            <div class="product-savings">Save up to $6.00 OFF any ONE (1) Glad Trash Bags product.</div>
-            <div class="product-expiry">Expires 05-31-26</div>
+            <div class="product-savings">nan</div>
+            <div class="product-expiry">Expires nan</div>
             <div class="product-meta">SKU: C478</div>
             <div class="product-price">$2.00</div>
         </div>
@@ -299,13 +188,13 @@
             <input type="number" id="qty_C478" name="quantity_C478" min="0" max="99" value="0">
         </div>
     </div>
-    
+
     <div class="product-row">
         <img src="images/C477.png" alt="2000 FLUSHES product">
         <div class="product-info">
             <div class="product-title">2000 FLUSHES product</div>
-            <div class="product-savings">Save up to $6.00 OFF any ONE (1) 2000 FLUSHES product.</div>
-            <div class="product-expiry">Expires 05-31-26</div>
+            <div class="product-savings">nan</div>
+            <div class="product-expiry">Expires nan</div>
             <div class="product-meta">SKU: C477</div>
             <div class="product-price">$2.00</div>
         </div>
@@ -314,13 +203,13 @@
             <input type="number" id="qty_C477" name="quantity_C477" min="0" max="99" value="0">
         </div>
     </div>
-    
+
     <div class="product-row">
         <img src="images/C476.png" alt="Armor All product">
         <div class="product-info">
             <div class="product-title">Armor All product</div>
-            <div class="product-savings">Save up to $8.00 OFF any ONE (1) Armor All product.</div>
-            <div class="product-expiry">Expires 05-31-26</div>
+            <div class="product-savings">nan</div>
+            <div class="product-expiry">Expires nan</div>
             <div class="product-meta">SKU: C476</div>
             <div class="product-price">$2.00</div>
         </div>
@@ -329,13 +218,13 @@
             <input type="number" id="qty_C476" name="quantity_C476" min="0" max="99" value="0">
         </div>
     </div>
-    
+
     <div class="product-row">
         <img src="images/C475.png" alt="CELESTIAL SEASONINGS">
         <div class="product-info">
             <div class="product-title">CELESTIAL SEASONINGS</div>
-            <div class="product-savings">Save up to $6.00 OFF any ONE (1) CELESTIAL SEASONINGS product.</div>
-            <div class="product-expiry">Expires 05-31-26</div>
+            <div class="product-savings">nan</div>
+            <div class="product-expiry">Expires nan</div>
             <div class="product-meta">SKU: C475</div>
             <div class="product-price">$2.00</div>
         </div>
@@ -344,13 +233,13 @@
             <input type="number" id="qty_C475" name="quantity_C475" min="0" max="99" value="0">
         </div>
     </div>
-    
+
     <div class="product-row">
         <img src="images/C474.png" alt="Domino product">
         <div class="product-info">
             <div class="product-title">Domino product</div>
-            <div class="product-savings">Save up to $7.00 OFF any ONE (1) Domino product.</div>
-            <div class="product-expiry">Expires 05-31-26</div>
+            <div class="product-savings">nan</div>
+            <div class="product-expiry">Expires nan</div>
             <div class="product-meta">SKU: C474</div>
             <div class="product-price">$2.00</div>
         </div>
@@ -359,13 +248,13 @@
             <input type="number" id="qty_C474" name="quantity_C474" min="0" max="99" value="0">
         </div>
     </div>
-    
+
     <div class="product-row">
         <img src="images/C473.png" alt="Velveeta product">
         <div class="product-info">
             <div class="product-title">Velveeta product</div>
-            <div class="product-savings">Save up to $8.00 OFF any ONE (1) Velveeta product.</div>
-            <div class="product-expiry">Expires 05-31-26</div>
+            <div class="product-savings">nan</div>
+            <div class="product-expiry">Expires nan</div>
             <div class="product-meta">SKU: C473</div>
             <div class="product-price">$2.00</div>
         </div>
@@ -374,13 +263,13 @@
             <input type="number" id="qty_C473" name="quantity_C473" min="0" max="99" value="0">
         </div>
     </div>
-    
+
     <div class="product-row">
         <img src="images/C472.png" alt="BURT'S BEES product">
         <div class="product-info">
             <div class="product-title">BURT'S BEES product</div>
-            <div class="product-savings">Save up to $9.00 OFF any ONE (1) BURT'S BEES product.</div>
-            <div class="product-expiry">Expires 05-31-26</div>
+            <div class="product-savings">nan</div>
+            <div class="product-expiry">Expires nan</div>
             <div class="product-meta">SKU: C472</div>
             <div class="product-price">$2.00</div>
         </div>
@@ -389,13 +278,13 @@
             <input type="number" id="qty_C472" name="quantity_C472" min="0" max="99" value="0">
         </div>
     </div>
-    
+
     <div class="product-row">
         <img src="images/C471.png" alt="Colgate product">
         <div class="product-info">
             <div class="product-title">Colgate product</div>
-            <div class="product-savings">Save up to $6.00 OFF any ONE (1) Colgate product.</div>
-            <div class="product-expiry">Expires 05-31-26</div>
+            <div class="product-savings">nan</div>
+            <div class="product-expiry">Expires nan</div>
             <div class="product-meta">SKU: C471</div>
             <div class="product-price">$2.00</div>
         </div>
@@ -404,13 +293,13 @@
             <input type="number" id="qty_C471" name="quantity_C471" min="0" max="99" value="0">
         </div>
     </div>
-    
+
     <div class="product-row">
         <img src="images/C470.png" alt="Organic Valley product">
         <div class="product-info">
             <div class="product-title">Organic Valley product</div>
-            <div class="product-savings">Save up to $8.00 OFF any ONE (1) Organic Valley product.</div>
-            <div class="product-expiry">Expires 05-31-26</div>
+            <div class="product-savings">nan</div>
+            <div class="product-expiry">Expires nan</div>
             <div class="product-meta">SKU: C470</div>
             <div class="product-price">$2.00</div>
         </div>
@@ -419,13 +308,13 @@
             <input type="number" id="qty_C470" name="quantity_C470" min="0" max="99" value="0">
         </div>
     </div>
-    
+
     <div class="product-row">
         <img src="images/C469.png" alt="pledge product">
         <div class="product-info">
             <div class="product-title">pledge product</div>
-            <div class="product-savings">Save up to $6.00 OFF any ONE (1) pledge product.</div>
-            <div class="product-expiry">Expires 05-31-26</div>
+            <div class="product-savings">nan</div>
+            <div class="product-expiry">Expires nan</div>
             <div class="product-meta">SKU: C469</div>
             <div class="product-price">$2.00</div>
         </div>
@@ -434,13 +323,13 @@
             <input type="number" id="qty_C469" name="quantity_C469" min="0" max="99" value="0">
         </div>
     </div>
-    
+
     <div class="product-row">
         <img src="images/C468.png" alt="Amy's product">
         <div class="product-info">
             <div class="product-title">Amy's product</div>
-            <div class="product-savings">Save up to $9.00 OFF any ONE (1) Amy's product.</div>
-            <div class="product-expiry">Expires 05-31-26</div>
+            <div class="product-savings">nan</div>
+            <div class="product-expiry">Expires nan</div>
             <div class="product-meta">SKU: C468</div>
             <div class="product-price">$2.00</div>
         </div>
@@ -449,13 +338,13 @@
             <input type="number" id="qty_C468" name="quantity_C468" min="0" max="99" value="0">
         </div>
     </div>
-    
+
     <div class="product-row">
         <img src="images/C467.png" alt="BUBBA burger product">
         <div class="product-info">
             <div class="product-title">BUBBA burger product</div>
-            <div class="product-savings">Save up to $7.00 OFF any ONE (1) BUBBA burger product.</div>
-            <div class="product-expiry">Expires 05-31-26</div>
+            <div class="product-savings">nan</div>
+            <div class="product-expiry">Expires nan</div>
             <div class="product-meta">SKU: C467</div>
             <div class="product-price">$2.00</div>
         </div>
@@ -464,13 +353,13 @@
             <input type="number" id="qty_C467" name="quantity_C467" min="0" max="99" value="0">
         </div>
     </div>
-    
+
     <div class="product-row">
         <img src="images/C466.png" alt="TAMPAX product">
         <div class="product-info">
             <div class="product-title">TAMPAX product</div>
-            <div class="product-savings">Save up to $9.00 OFF any ONE (1) TAMPAX product.</div>
-            <div class="product-expiry">Expires 05-31-26</div>
+            <div class="product-savings">nan</div>
+            <div class="product-expiry">Expires nan</div>
             <div class="product-meta">SKU: C466</div>
             <div class="product-price">$2.00</div>
         </div>
@@ -479,8 +368,7 @@
             <input type="number" id="qty_C466" name="quantity_C466" min="0" max="99" value="0">
         </div>
     </div>
-    
-    <!-- PRODUCTS END -->
-    <button type="button" class="paypal-btn" onclick="submitToPaypal()">Proceed to PayPal</button>
+<button type="submit" class="paypal-btn">Proceed to PayPal</button>
+</form>
 </body>
 </html>
