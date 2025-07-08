@@ -80,6 +80,29 @@
         -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
     }
     body { -webkit-touch-callout: none; }
+    
+.payment-methods-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto 40px auto;
+    max-width: 340px;
+    text-align: center;
+}
+
+.secure-payment-text {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.payment-methods-img {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    border-radius: 6px;
+}
 </style>
 <script>document.addEventListener('contextmenu', e => e.preventDefault());</script>
 </head>
@@ -89,6 +112,12 @@
     <!-- Products will be dynamically inserted here -->
 </form>
 <button type="submit" class="paypal-btn" form="none" id="paypal-button">Proceed to PayPal</button>
+
+<!-- Add the PayPal payment banner here -->
+<div class="payment-methods-container">
+  <p class="secure-payment-text">Secure payment by PayPal</p>
+  <img src="payments.png" alt="Accepted payment methods: PayPal, MasterCard, VISA, American Express, DISCOVER" class="payment-methods-img">
+</div>
 
 <script>
 // Product data from the Excel file
@@ -262,29 +291,9 @@ const products = [
 {name: "GREEN MOUNTAIN COFFEE", savings_statement: "Save up to $7.00 OFF any ONE (1) GREEN MOUNTAIN COFFEE product.", expiration_date: "11/30/2025", SKU: "C321", price: "2.00"},
 {name: "SMART BALANCE", savings_statement: "Save up to $6.99 OFF any ONE (1) SMART BALANCE product.", expiration_date: "11/30/2025", SKU: "C320", price: "2.00"},
 {name: "PETE & GERRY'S", savings_statement: "Save up to $7.99 OFF any ONE (1) PETE & GERRY'S product.", expiration_date: "11/30/2025", SKU: "C319", price: "2.00"},
-{name: "L'OREAL Paris", savings_statement: "Save up to $9.00 OFF any ONE (1) L'OREAL Paris product.", expiration_date: "10/31/2025", SKU: "C318", price: "2.00"},
 {name: "Barilla", savings_statement: "Save up to $4.99 OFF any ONE (1) Barilla product.", expiration_date: "11/30/2025", SKU: "C317", price: "2.00"},
 {name: "DIGIORNO PIZZA", savings_statement: "Save up to $9.99 OFF any ONE (1) DIGIORNO PIZZA product.", expiration_date: "11/30/2025", SKU: "C316", price: "2.00"},
-{name: "FLORIDA CRYSTALS", savings_statement: "Save up to $7.99 OFF any ONE (1) FLORIDA CRYSTALS product.", expiration_date: "10/31/2025", SKU: "C315", price: "2.00"},
-{name: "GOYA", savings_statement: "Save up to $6.99 OFF any ONE (1) GOYA product.", expiration_date: "10/31/2025", SKU: "C314", price: "2.00"},
-{name: "LINDT", savings_statement: "Save up to $7.00 OFF any ONE (1) LINDT product.", expiration_date: "10/31/2025", SKU: "C313", price: "2.00"},
-{name: "Lipton Tea", savings_statement: "Save up to $6.99 OFF any ONE (1) Lipton Tea.", expiration_date: "10/31/2025", SKU: "C312", price: "2.00"},
 {name: "all Laundry", savings_statement: "Save up to $6.00 OFF any ONE (1) all Laundry.", expiration_date: "11/30/2025", SKU: "C311", price: "2.00"},
-{name: "TWININGS", savings_statement: "Save up to $9.99 OFF any ONE (1) TWININGS product.", expiration_date: "10/31/2025", SKU: "C310", price: "2.00"},
-{name: "KLONDIKE Ice Cream", savings_statement: "Save up to $6.99 OFF any ONE (1) KLONDIKE Ice Cream.", expiration_date: "10/31/2025", SKU: "C309", price: "2.00"},
-{name: "Luvs", savings_statement: "Save up to $6.00 OFF any ONE (1) Luvs product.", expiration_date: "10/31/2025", SKU: "C308", price: "2.00"},
-{name: "Nabisco", savings_statement: "Save up to $6.00 OFF any ONE (1) Nabisco product.", expiration_date: "10/31/2025", SKU: "C307", price: "2.00"},
-{name: "Pepperidge Farms", savings_statement: "Save up to $8.00 OFF any ONE (1) Pepperidge Farms product.", expiration_date: "10/31/2025", SKU: "C306", price: "2.00"},
-{name: "Persil", savings_statement: "Save up to $9.00 OFF any ONE (1) Persil product.", expiration_date: "10/31/2025", SKU: "C305", price: "2.00"},
-{name: "Pictsweet Farms", savings_statement: "Save up to $6.00 OFF any ONE (1) Pictsweet Farms product.", expiration_date: "10/31/2025", SKU: "C304", price: "2.00"},
-{name: "Axe", savings_statement: "Save up to $7.00 OFF any ONE (1) Axe product.", expiration_date: "10/31/2025", SKU: "C303", price: "2.00"},
-{name: "FIJI Water", savings_statement: "Save up to $6.00 OFF any ONE (1) FIJI Water.", expiration_date: "10/31/2025", SKU: "C302", price: "2.00"},
-{name: "Fisher", savings_statement: "Save up to $7.00 OFF any ONE (1) Fisher product.", expiration_date: "10/31/2025", SKU: "C301", price: "2.00"},
-{name: "SeaPak", savings_statement: "Save up to $10.99 OFF any ONE (1) SeaPak product.", expiration_date: "10/31/2025", SKU: "C300", price: "2.00"},
-{name: "Murphy Oil Soap", savings_statement: "Save up to $6.99 OFF any ONE (1) Murphy Oil Soap product.", expiration_date: "10/31/2025", SKU: "C297", price: "2.00"},
-{name: "Minute Maid Juice", savings_statement: "Save up to $6.99 OFF any ONE (1) Minute Maid Juice product.", expiration_date: "10/31/2025", SKU: "C296", price: "2.00"},
-{name: "Driscolls", savings_statement: "Save up to $6.99 OFF any ONE (1) Driscoll's product.", expiration_date: "10/31/2025", SKU: "C292", price: "2.00"},
-{name: "Freschetta Pizza", savings_statement: "Save up to $7.99 OFF any ONE (1) Freschetta Pizza product.", expiration_date: "10/31/2025", SKU: "C291", price: "2.00"},
 ];
 
 // Function to format the expiration date as MM/DD/YYYY
