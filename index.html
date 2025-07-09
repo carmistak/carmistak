@@ -103,6 +103,75 @@
     height: auto;
     border-radius: 6px;
 }
+/* Footer Styles */
+.site-footer {
+    margin-top: 60px;
+    background: #f8f8f8;
+    border-top: 1px solid #e7e7e7;
+    padding: 30px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.shipping-promo {
+    margin: 30px 0;
+}
+
+.shipping-promo h2 {
+    font-size: 1.8rem;
+    color: #04724d;
+    margin-bottom: 5px;
+}
+
+.shipping-promo h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-top: 0;
+}
+
+.footer-message {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.footer-message p {
+    margin: 8px 0;
+    color: #555;
+}
+
+.footer-brand {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+.copyright-bar {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #e7e7e7;
+    margin-top: 30px;
+    padding-top: 20px;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .copyright-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .shipping-promo h2 {
+        font-size: 1.4rem;
+    }
+}
+
 </style>
 <script>document.addEventListener('contextmenu', e => e.preventDefault());</script>
 </head>
@@ -115,7 +184,6 @@
 
 <!-- Add the PayPal payment banner here -->
 <div class="payment-methods-container">
-  <p class="secure-payment-text">Secure payment by PayPal</p>
   <img src="images/payments.png" alt="Accepted payment methods: PayPal, MasterCard, VISA, American Express, DISCOVER" class="payment-methods-img">
 </div>
 
@@ -392,5 +460,27 @@ document.addEventListener('DOMContentLoaded', function() {
     setupPayPalButton();
 });
 </script>
+<!-- Footer Section -->
+<footer class="site-footer">
+  <div class="shipping-promo">
+    <h2>FREE SHIPPING</h2>
+    <h3>MINIMUM ORDER $20.00</h3>
+  </div>
+  
+  <div class="footer-message">
+    <p>Join the thousands of satisfied customers saving hundreds of dollars a month on grocery bills.</p>
+    <p>Coupons deemed delivered based upon tracking confirmation.</p>
+    <p>Please note: All orders will be mailed within 24-48 hours of the time of purchase.</p>
+    <p>Delivery normally takes 5-7 business days.</p>
+    <p></p>
+    <p class="footer-brand">COUPON WEEKLY</p>
+  </div>
+  
+  <div class="copyright-bar">
+    <div class="copyright">Copyright © 2025 CouponWeekly</div>
+    <div class="footer-links">Weekly Savings Report | Subscribe</div>
+  </div>
+</footer>
+
 </body>
 </html>
