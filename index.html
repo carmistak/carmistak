@@ -81,6 +81,13 @@
     }
     body { -webkit-touch-callout: none; }
     
+.shipping-notice {
+    text-align: center;
+    color: #555;
+    font-size: 0.9rem;
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
 .payment-methods-container {
     display: flex;
     flex-direction: column;
@@ -236,6 +243,10 @@
 </form>
 <button type="submit" class="paypal-btn" form="none" id="paypal-button">Proceed to PayPal</button>
 
+<div class="shipping-notice">
+  <p>Free shipping on orders over $20.00. A $5.99 shipping fee applies to smaller orders.</p>
+</div>
+
 <!-- Add the PayPal payment banner here -->
 <div class="payment-methods-container">
   <img src="images/payments.png" alt="Accepted payment methods: PayPal, MasterCard, VISA, American Express, DISCOVER" class="payment-methods-img">
@@ -244,6 +255,13 @@
 <script>
 // Product data from the Excel file
 const products = [
+{name: "Mr. Clean", savings_statement: "Save up to $9.00 OFF any ONE (1) Mr. Clean product.", expiration_date: "06/30/2026", SKU: "C494", price: "2.00"},
+{name: "SuperPretzel", savings_statement: "Save up to $8.00 OFF any ONE (1) SuperPretzel product.", expiration_date: "06/30/2026", SKU: "C493", price: "2.00"},
+{name: "V8", savings_statement: "Save up to $7.00 OFF any ONE (1) V8 product.", expiration_date: "06/30/2026", SKU: "C492", price: "2.00"},
+{name: "Chicken of the Sea", savings_statement: "Save up to $7.00 OFF any ONE (1) Chicken of the Sea product.", expiration_date: "06/30/2026", SKU: "C491", price: "2.00"},
+{name: "Downey", savings_statement: "Save up to $6.00 OFF any ONE (1) Downey product.", expiration_date: "06/30/2026", SKU: "C490", price: "2.00"},
+{name: "Hefty", savings_statement: "Save up to $6.00 OFF any ONE (1) Hefty product.", expiration_date: "06/30/2026", SKU: "C489", price: "2.00"},
+{name: "Sun Maid", savings_statement: "Save up to $7.00 OFF any ONE (1) Sun Maid product.", expiration_date: "06/30/2026", SKU: "C488", price: "2.00"},
 {name: "TRESemme", savings_statement: "Save up to $8.00 OFF any ONE (1) TRESemme  product.", expiration_date: "06/30/2026", SKU: "C487", price: "2.00"},
 {name: "Seventh Generation ", savings_statement: "Save up to $6.00 OFF any ONE (1) Seventh Generation product", expiration_date: "06/30/2026", SKU: "C486", price: "2.00"},
 {name: "SeaPak ", savings_statement: "Save up to $10.00 OFF any ONE (1) SeaPak  product.", expiration_date: "06/30/2026", SKU: "C485", price: "2.00"},
@@ -394,11 +412,11 @@ const products = [
 {name: "Vlasic", savings_statement: "Save up to $6.99 OFF any ONE (1) Vlasic Juice product.", expiration_date: "11/30/2025", SKU: "C340", price: "2.00"},
 {name: "Freshpet", savings_statement: "Save up to $7.00 OFF any ONE (1) Freshpet product.", expiration_date: "11/30/2025", SKU: "C339", price: "2.00"},
 {name: "Frigo CheeseHeads", savings_statement: "Save up to $7.99 OFF any ONE (1) Frigo CheeseHeads product.", expiration_date: "11/30/2025", SKU: "C338", price: "2.00"},
-{name: "PINE SOL", savings_statement: "Save up to $6.99 OFF any ONE (1) PINE SOL product.", expiration_date: "11/31/2026", SKU: "C337", price: "2.00"},
-{name: "Post", savings_statement: "Save up to $6.99 OFF any ONE (1) Post product.", expiration_date: "11/31/2026", SKU: "C336", price: "2.00"},
-{name: "talenti", savings_statement: "Save up to $7.99 OFF any ONE (1) talenti product.", expiration_date: "11/31/2026", SKU: "C335", price: "2.00"},
-{name: "AJAX", savings_statement: "Save up to $5.99 OFF any ONE (1) AJAX product.", expiration_date: "11/31/2026", SKU: "C334", price: "2.00"},
-{name: "Blue Bunny ICE CREAM", savings_statement: "Save up to $7.99 OFF any ONE (1) Blue Bunny ICE CREAM product.", expiration_date: "11/31/2026", SKU: "C333", price: "2.00"},
+{name: "PINE SOL", savings_statement: "Save up to $6.99 OFF any ONE (1) PINE SOL product.", expiration_date: "11/31/2025", SKU: "C337", price: "2.00"},
+{name: "Post", savings_statement: "Save up to $6.99 OFF any ONE (1) Post product.", expiration_date: "11/31/2025", SKU: "C336", price: "2.00"},
+{name: "talenti", savings_statement: "Save up to $7.99 OFF any ONE (1) talenti product.", expiration_date: "11/31/2025", SKU: "C335", price: "2.00"},
+{name: "AJAX", savings_statement: "Save up to $5.99 OFF any ONE (1) AJAX product.", expiration_date: "11/31/2025", SKU: "C334", price: "2.00"},
+{name: "Blue Bunny ICE CREAM", savings_statement: "Save up to $7.99 OFF any ONE (1) Blue Bunny ICE CREAM product.", expiration_date: "11/31/2025", SKU: "C333", price: "2.00"},
 {name: "Cape Cod Chips", savings_statement: "Save up to $6.99 OFF any ONE (1) Cape Cod Chips product.", expiration_date: "11/30/2025", SKU: "C332", price: "2.00"},
 {name: "Dole", savings_statement: "Save up to $7.99 OFF any ONE (1) Dole product.", expiration_date: "11/30/2025", SKU: "C331", price: "2.00"},
 {name: "Mazola", savings_statement: "Save up to $6.99 OFF any ONE (1) Mazola product.", expiration_date: "11/30/2025", SKU: "C330", price: "2.00"},
@@ -415,7 +433,7 @@ const products = [
 {name: "PETE & GERRY'S", savings_statement: "Save up to $7.99 OFF any ONE (1) PETE & GERRY'S product.", expiration_date: "11/30/2025", SKU: "C319", price: "2.00"},
 {name: "Barilla", savings_statement: "Save up to $4.99 OFF any ONE (1) Barilla product.", expiration_date: "11/30/2025", SKU: "C317", price: "2.00"},
 {name: "DIGIORNO PIZZA", savings_statement: "Save up to $9.99 OFF any ONE (1) DIGIORNO PIZZA product.", expiration_date: "11/30/2025", SKU: "C316", price: "2.00"},
-{name: "all Laundry", savings_statement: "Save up to $6.00 OFF any ONE (1) all Laundry.", expiration_date: "11/30/2025", SKU: "C311", price: "2.00"},
+{name: "all Laundry", savings_statement: "Save up to $6.00 OFF any ONE (1) all Laundry product.", expiration_date: "11/30/2025", SKU: "C311", price: "2.00"},
 ];
 
 // Function to format the expiration date as MM/DD/YYYY
@@ -481,16 +499,21 @@ function setupPayPalButton() {
             + '<input type="hidden" name="cancel_return" value="https://yourdomain.com/cancel">'
 
         var idx = 1;
+        var subtotal = 0;
         
-        // Add selected products to PayPal form
+        // Add selected products to PayPal form and calculate subtotal
         products.forEach(product => {
             const qtyElement = document.getElementById(`qty_${product.SKU}`);
             const qty = qtyElement ? parseInt(qtyElement.value) : 0;
             
             if (qty > 0) {
+                const price = parseFloat(product.price);
+                const itemTotal = price * qty;
+                subtotal += itemTotal;
+                
                 form.innerHTML += `<input type="hidden" name="item_name_${idx}" value="${product.name}">`;
                 form.innerHTML += `<input type="hidden" name="item_number_${idx}" value="${product.SKU}">`;
-                form.innerHTML += `<input type="hidden" name="amount_${idx}" value="${product.price}">`;
+                form.innerHTML += `<input type="hidden" name="amount_${idx}" value="${price.toFixed(2)}">`;
                 form.innerHTML += `<input type="hidden" name="quantity_${idx}" value="${qty}">`;
                 idx++;
             }
@@ -499,6 +522,15 @@ function setupPayPalButton() {
         if (idx === 1) {
             alert('Please select at least one product.');
             return false;
+        }
+        
+        // Add shipping fee if subtotal is less than $20.00
+        if (subtotal < 20.00) {
+            form.innerHTML += `<input type="hidden" name="shipping" value="5.99">`;
+            // Optional: Add a note about the shipping fee
+            form.innerHTML += `<input type="hidden" name="item_name_${idx}" value="Shipping Fee (Orders under $20)">`;
+            form.innerHTML += `<input type="hidden" name="amount_${idx}" value="5.99">`;
+            form.innerHTML += `<input type="hidden" name="quantity_${idx}" value="1">`;
         }
         
         document.body.appendChild(form);
@@ -532,11 +564,15 @@ document.addEventListener('DOMContentLoaded', function() {
   
   <div class="copyright-bar">
     <div class="copyright">Copyright © 2025 CouponWeekly</div>
+
 <div class="subscribe-container">
-  <form id="subscribe-form" action="https://formsubmit.co/carmenistak@gmail.com" method="POST">
-    <input type="email" name="email" placeholder="Enter your email address" required>
-    <button type="submit">SUBSCRIBE</button>
-  </form>
+<form id="subscribe-form" action="https://formsubmit.co/carmenistak@gmail.com" method="POST">
+  <input type="text" name="_honey" style="display:none">
+  <input type="hidden" name="_subject" value="New Coupon Weekly Subscriber!">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="email" name="email" placeholder="Enter your email address" required>
+  <button type="submit">SUBSCRIBE</button>
+</form>
 </div>
   </div>
 </footer>
