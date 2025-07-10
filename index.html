@@ -566,12 +566,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div class="subscribe-container">
 <form id="subscribe-form" action="https://formsubmit.co/carmenistak@gmail.com" method="POST">
+  <!-- Anti-spam fields -->
   <input type="text" name="_honey" style="display:none">
-  <input type="hidden" name="_subject" value="New Coupon Weekly Subscriber!">
   <input type="hidden" name="_captcha" value="false">
+  
+  <!-- Your custom subject line -->
+  <input type="hidden" name="_subject" value="New Coupon Weekly Subscriber!">
+  
+  <!-- ADD THIS LINE FOR REDIRECT -->
+  <input type="hidden" name="_next" value="https://your-domain.com/subscribe-success.html">
+
+  <!-- Visible form fields -->
   <input type="email" name="email" placeholder="Enter your email address" required>
   <button type="submit">SUBSCRIBE FOR UPDATES</button>
 </form>
+
 </div>
   </div>
 </footer>
