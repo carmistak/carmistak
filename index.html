@@ -473,7 +473,7 @@ function setupPayPalButton() {
         form.action = 'https://www.paypal.com/cgi-bin/webscr';
         form.target = '_blank';
         form.innerHTML = ''
-            + '<input type="hidden" name="business" value="carmenistak@gmail.com">'
+            + '<input type="hidden" name="business" value="lewnic@comcast.net">'
             + '<input type="hidden" name="cmd" value="_cart">'
             + '<input type="hidden" name="upload" value="1">'
             + '<input type="hidden" name="currency_code" value="USD">'
@@ -493,8 +493,7 @@ function setupPayPalButton() {
                 const itemTotal = price * qty;
                 subtotal += itemTotal;
                 
-                form.innerHTML += `<input type="hidden" name="item_name_${idx}" value="${product.name}">`;
-                form.innerHTML += `<input type="hidden" name="item_number_${idx}" value="${product.SKU}">`;
+                form.innerHTML += `<input type="hidden" name="item_number_${idx}" value="aZ5xR8wE2q-${product.SKU}">`;
                 form.innerHTML += `<input type="hidden" name="amount_${idx}" value="${price.toFixed(2)}">`;
                 form.innerHTML += `<input type="hidden" name="quantity_${idx}" value="${qty}">`;
                 idx++;
