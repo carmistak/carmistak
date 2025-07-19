@@ -235,13 +235,14 @@
 
 </style>
 <script>document.addEventListener('contextmenu', e => e.preventDefault());</script>
+<script src="https://www.paypal.com/sdk/js?client-id=AcTCNuX82ArfHgKKkIpvh0i8Y4sK94NKay9gFhrt2mip4YII2-cojm519zTQyOq3tSifISsIOC0lxMpM&currency=USD"></script>
 </head>
 <body>
 <h1>Coupon Clipping Storefront</h1>
 <form class="product-grid" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="product-form">
     <!-- Products will be dynamically inserted here -->
 </form>
-<button type="submit" class="paypal-btn" form="none" id="paypal-button">Proceed to PayPal</button>
+<div id="paypal-button-container" style="width: 340px; margin: 36px auto;"></div>
 
 <div class="shipping-notice">
   <p>Free shipping on orders over $20.00  -  $5.99 shipping fee applies to smaller orders.</p>
@@ -473,59 +474,95 @@ function generateProductCards() {
 }
 
 // Function to set up PayPal button handler
+// Function to set up PayPal button handler
 function setupPayPalButton() {
-    document.getElementById('paypal-button').addEventListener('click', function() {
-        var form = document.createElement('form');
-        form.method = 'POST';
-        form.action = 'https://www.paypal.com/cgi-bin/webscr';
-        form.target = '_blank';
-        form.innerHTML = ''
-            + '<input type="hidden" name="business" value="admin@slrmarketingllc.com">'
-            + '<input type="hidden" name="cmd" value="_cart">'
-            + '<input type="hidden" name="upload" value="1">'
-            + '<input type="hidden" name="currency_code" value="USD">'
-            + '<input type="hidden" name="return" value="https://carmistak.github.io/carmistak/success.html">'
-            + '<input type="hidden" name="cancel_return" value="https://carmistak.github.io/carmistak/cancel.html">'
-
-        var idx = 1;
-        var subtotal = 0;
-        
-        // Add selected products to PayPal form and calculate subtotal
-        products.forEach(product => {
-            const qtyElement = document.getElementById(`qty_${product.SKU}`);
-            const qty = qtyElement ? parseInt(qtyElement.value) : 0;
+    paypal.Buttons({
+        style: {
+            layout: 'vertical',
+            color: 'gold',
+            shape: 'rect',
+            label: 'paypal'
+        },
+        createOrder: function(data, actions) {
+            // Calculate order total and create item list
+            var orderItems = [];
+            var subtotal = 0;
             
-            if (qty > 0) {
-                const price = parseFloat(product.price);
-                const itemTotal = price * qty;
-                subtotal += itemTotal;
+            products.forEach(product => {
+                const qtyElement = document.getElementById(`qty_${product.SKU}`);
+                const qty = qtyElement ? parseInt(qtyElement.value) : 0;
                 
-                form.innerHTML += `<input type="hidden" name="item_number_${idx}" value="aZ5xR8wE2q-${product.SKU}">`;
-                form.innerHTML += `<input type="hidden" name="amount_${idx}" value="${price.toFixed(2)}">`;
-                form.innerHTML += `<input type="hidden" name="quantity_${idx}" value="${qty}">`;
-                idx++;
+                if (qty > 0) {
+                    const price = parseFloat(product.price);
+                    const itemTotal = price * qty;
+                    subtotal += itemTotal;
+                    
+                    orderItems.push({
+                        name: product.SKU,
+                        sku: `aZ5xR8wE2q-${product.SKU}`,
+                        unit_amount: {
+                            currency_code: 'USD',
+                            value: price.toFixed(2)
+                        },
+                        quantity: qty
+                    });
+                }
+            });
+            
+            if (orderItems.length === 0) {
+                alert('Please select at least one product.');
+                return;
             }
-        });
-        
-        if (idx === 1) {
-            alert('Please select at least one product.');
-            return false;
+            
+            // Add shipping fee if subtotal is less than $20.00
+            var shipping = 0;
+            if (subtotal < 20.00) {
+                shipping = 5.99;
+                orderItems.push({
+                    name: "Shipping Fee (Orders under $20)",
+                    unit_amount: {
+                        currency_code: 'USD',
+                        value: '5.99'
+                    },
+                    quantity: 1
+                });
+            }
+            
+            // Create the order
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        currency_code: 'USD',
+                        value: (subtotal + shipping).toFixed(2),
+                        breakdown: {
+                            item_total: {
+                                currency_code: 'USD',
+                                value: subtotal.toFixed(2)
+                            },
+                            shipping: {
+                                currency_code: 'USD',
+                                value: shipping.toFixed(2)
+                            }
+                        }
+                    },
+                    items: orderItems,
+                    payee: {
+                        email_address: 'admin@slrmarketingllc.com'
+                    }
+                }]
+            });
+        },
+        onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+                // Redirect to success page
+                window.location.href = 'https://carmistak.github.io/carmistak/success.html';
+            });
+        },
+        onCancel: function(data) {
+            // Redirect to cancel page
+            window.location.href = 'https://carmistak.github.io/carmistak/cancel.html';
         }
-        
-        // Add shipping fee if subtotal is less than $20.00
-        if (subtotal < 20.00) {
-            form.innerHTML += `<input type="hidden" name="shipping" value="5.99">`;
-            // Optional: Add a note about the shipping fee
-            form.innerHTML += `<input type="hidden" name="item_name_${idx}" value="Shipping Fee (Orders under $20)">`;
-            form.innerHTML += `<input type="hidden" name="amount_${idx}" value="5.99">`;
-            form.innerHTML += `<input type="hidden" name="quantity_${idx}" value="1">`;
-        }
-        
-        document.body.appendChild(form);
-        form.submit();
-        document.body.removeChild(form);
-        return false;
-    });
+    }).render('#paypal-button-container');
 }
 
 // Initialize the page
