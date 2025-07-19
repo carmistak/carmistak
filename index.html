@@ -245,7 +245,7 @@
 <div id="paypal-button-container" style="width: 340px; margin: 36px auto;"></div>
 
 <div class="shipping-notice">
-  <p>Free shipping on orders over $20.00  -  $5.99 shipping fee applies to smaller orders.</p>
+  <p>Minimum order amount: $20.00. All orders include free shipping.</p>
 </div>
 
 <!-- Add the PayPal payment banner here -->
@@ -474,7 +474,6 @@ function generateProductCards() {
 }
 
 // Function to set up PayPal button handler
-// Function to set up PayPal button handler
 function setupPayPalButton() {
     paypal.Buttons({
         style: {
@@ -514,34 +513,22 @@ function setupPayPalButton() {
                 return;
             }
             
-            // Add shipping fee if subtotal is less than $20.00
-            var shipping = 0;
+            // Check for minimum order amount
             if (subtotal < 20.00) {
-                shipping = 5.99;
-                orderItems.push({
-                    name: "Shipping Fee (Orders under $20)",
-                    unit_amount: {
-                        currency_code: 'USD',
-                        value: '5.99'
-                    },
-                    quantity: 1
-                });
+                alert('Minimum order amount is $20.00. Please add more items to your cart.');
+                return;
             }
             
-            // Create the order
+            // Create the order (no shipping fee)
             return actions.order.create({
                 purchase_units: [{
                     amount: {
                         currency_code: 'USD',
-                        value: (subtotal + shipping).toFixed(2),
+                        value: subtotal.toFixed(2),
                         breakdown: {
                             item_total: {
                                 currency_code: 'USD',
                                 value: subtotal.toFixed(2)
-                            },
-                            shipping: {
-                                currency_code: 'USD',
-                                value: shipping.toFixed(2)
                             }
                         }
                     },
@@ -581,7 +568,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="footer-message">
     <p>Join the thousands of satisfied customers saving hundreds of dollars a month on grocery bills.</p>
     <p>Coupons deemed delivered based upon tracking confirmation.</p>
-    <p>Please note: All orders will be mailed within 1-2 business days of the time of purchase.</p>
+    <p>Please note: All orders will be mailed within 2 - 3 business days of the time of purchase.</p>
     <p>Delivery normally takes 5-7 business days.</p>
     <p class="footer-brand">COUPON WEEKLY</p>
   </div>
