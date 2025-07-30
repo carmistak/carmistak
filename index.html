@@ -256,6 +256,13 @@
 <script>
 // Product data from the Excel file
 const products = [
+{name: "Sister Schuberts", savings_statement: "Save up to $7.00 OFF any ONE (1) Sister Schberts product.", expiration_date: "07/31/2026", SKU: "C522", price: "2.00"},
+{name: "Pringles", savings_statement: "Save up to $4.00 OFF any ONE (1) Pringles product.", expiration_date: "07/31/2026", SKU: "C521", price: "2.00"},
+{name: "Bumble Bee", savings_statement: "Save up to $6.00 OFF any ONE (1) Bumble Bee product.", expiration_date: "07/31/2026", SKU: "C520", price: "2.00"},
+{name: "Horizon Organic", savings_statement: "Save up to $7.00 OFF any ONE (1) Horizon Organic product.", expiration_date: "07/31/2026", SKU: "C519", price: "2.00"},
+{name: "Morton Salt", savings_statement: "Save up to $4.00 OFF any ONE (1) Morton Salt product.", expiration_date: "07/31/2026", SKU: "C518", price: "2.00"},
+{name: "Nivea", savings_statement: "Save up to $6.00 OFF any ONE (1) Nivea product.", expiration_date: "07/31/2026", SKU: "C517", price: "2.00"},
+{name: "Philadelphia", savings_statement: "Save up to $6.00 OFF any ONE (1) Philadelphia product.", expiration_date: "07/31/2026", SKU: "C516", price: "2.00"},
 {name: "Tidy Cats Cat Litter", savings_statement: "Save up to $7.00 OFF any ONE (1) Tidy Cats Cat Litter product.", expiration_date: "07/31/2026", SKU: "C515", price: "2.00"},
 {name: "Ball Park", savings_statement: "Save up to $7.00 OFF any ONE (1) Ball Park product.", expiration_date: "07/31/2026", SKU: "C514", price: "2.00"},
 {name: "Bigelow", savings_statement: "Save up to $5.00 OFF any ONE (1) Bigelow product.", expiration_date: "07/31/2026", SKU: "C513", price: "2.00"},
@@ -411,26 +418,6 @@ const products = [
 {name: "Chobani", savings_statement: "Save up to $6.99 OFF any ONE (1) Chobani product.", expiration_date: "01/31/2026", SKU: "C363", price: "2.00"},
 {name: "Crest toothpaste ", savings_statement: "Save up to $7.00 OFF any ONE (1) Crest toothpaste or sensi-stop product.", expiration_date: "01/31/2026", SKU: "C362", price: "2.00"},
 {name: "DANNON", savings_statement: "Save up to $7.99 OFF any ONE (1) DANNON product.", expiration_date: "01/31/2026", SKU: "C361", price: "2.00"},
-{name: "Tropicana", savings_statement: "Save up to $7.99 OFF any ONE (1) Tropicana product.", expiration_date: "12/31/2025", SKU: "C360", price: "2.00"},
-{name: "Popsicle", savings_statement: "Save up to $8.99 OFF any ONE (1) Popsicle product.", expiration_date: "12/31/2025", SKU: "C359", price: "2.00"},
-{name: "POP SECRET", savings_statement: "Save up to $7.99 OFF any ONE (1) POP SECRET product.", expiration_date: "12/31/2025", SKU: "C358", price: "2.00"},
-{name: "Nestle water", savings_statement: "Save up to $7.99 OFF any ONE (1) Nestle Pure Life or Nestle Splash product.", expiration_date: "12/31/2025", SKU: "C357", price: "2.00"},
-{name: "Food FOR Life", savings_statement: "Save up to $8.99 OFF any ONE (1) Food FOR Life product.", expiration_date: "12/31/2025", SKU: "C356", price: "2.00"},
-{name: "Folgers", savings_statement: "Save up to $9.99 OFF any ONE (1) Folgers product.", expiration_date: "12/31/2025", SKU: "C355", price: "2.00"},
-{name: "Blue Diamond ", savings_statement: "Save up to $7.00 OFF any ONE (1) Blue Diamond GROWERS product.", expiration_date: "12/31/2025", SKU: "C354", price: "2.00"},
-{name: "Chinet", savings_statement: "Save up to $6.00 OFF any ONE (1) Chinet product.", expiration_date: "12/31/2025", SKU: "C353", price: "2.00"},
-{name: "Cracker Barrel Cheese", savings_statement: "Save up to $6.99 OFF any ONE (1) Cracker Barrel Cheese product.", expiration_date: "12/31/2025", SKU: "C352", price: "2.00"},
-{name: "EL MONTEREY", savings_statement: "Save up to $8.99 OFF any ONE (1) EL MONTEREY product.", expiration_date: "12/31/2025", SKU: "C351", price: "2.00"},
-{name: "Pillsbury", savings_statement: "Save up to $7.99 OFF any ONE (1) Pillsbury product.", expiration_date: "12/31/2025", SKU: "C350", price: "2.00"},
-{name: "Purex", savings_statement: "Save up to $9.99 OFF any ONE (1) Purex product.", expiration_date: "12/31/2025", SKU: "C349", price: "2.00"},
-{name: "SARGENTO Natural Cheese", savings_statement: "Save up to $8.99 OFF any ONE (1) SARGENTO Natural Cheese product.", expiration_date: "12/31/2025", SKU: "C348", price: "2.00"},
-{name: "Hungry-Man", savings_statement: "Save up to $7.99 OFF any ONE (1) Hungry-Man product.", expiration_date: "12/31/2025", SKU: "C347", price: "2.00"},
-{name: "KENs", savings_statement: "Save up to $6.99 OFF any ONE (1) KEN'S product.", expiration_date: "12/31/2025", SKU: "C346", price: "2.00"},
-{name: "LEAN CUISINE Entree", savings_statement: "Save up to $6.99 OFF any ONE (1) LEAN CUISINE Entree.", expiration_date: "12/31/2025", SKU: "C345", price: "2.00"},
-{name: "Morning Star FARMS", savings_statement: "Save up to $9.99 OFF any ONE (1) Morning Star FARMS product.", expiration_date: "12/31/2025", SKU: "C344", price: "2.00"},
-{name: "MOTTs", savings_statement: "Save up to $7.99 OFF any ONE (1) MOTT'S product.", expiration_date: "12/31/2025", SKU: "C343", price: "2.00"},
-{name: "Comet", savings_statement: "Save up to $6.00 OFF any ONE (1) all Laundry product.", expiration_date: "12/31/2025", SKU: "C342", price: "2.00"},
-{name: "Crayola", savings_statement: "Save up to $8.99 OFF any ONE (1) Crayola product.", expiration_date: "12/31/2025", SKU: "C341", price: "2.00"},
 ];
 
 // Function to format the expiration date as MM/DD/YYYY
